@@ -403,14 +403,24 @@ export default function Index() {
                   Install from Marketplace
                 </h3>
                 <div className="flex gap-4">
-                  <button className="bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors flex items-center gap-2">
+                  <a
+                    href="https://vs.neurolint.dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors flex items-center gap-2"
+                  >
                     <Download className="w-5 h-5" />
                     Install Extension
-                  </button>
-                  <button className="border border-zinc-800 text-white px-6 py-3 rounded-lg font-medium hover:border-white transition-colors flex items-center gap-2">
+                  </a>
+                  <a
+                    href="https://vs.neurolint.dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border border-zinc-800 text-white px-6 py-3 rounded-lg font-medium hover:border-white transition-colors flex items-center gap-2"
+                  >
                     <ExternalLink className="w-4 h-4" />
                     View on Marketplace
-                  </button>
+                  </a>
                 </div>
               </div>
 
