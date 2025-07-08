@@ -17,10 +17,10 @@ import {
 } from "lucide-react";
 
 function TypingTerminal() {
-  const [currentText, setCurrentText] = useState("");
+  const [displayedLines, setDisplayedLines] = useState<string[]>([]);
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
-  const [isWaiting, setIsWaiting] = useState(false);
 
   const terminalLines = [
     "$ npm install -g @neurolint/cli",
@@ -50,139 +50,115 @@ function TypingTerminal() {
     let timeout: NodeJS.Timeout;
     const currentLine = terminalLines[currentLineIndex];
     const isCommand = currentLine.startsWith("$");
-    const typingSpeed = isCommand ? 100 : 50;
-    const lineDelay = isCommand ? 1000 : 300;
+    const typingSpeed = isCommand ? 80 : 40;
 
-    if (currentCharIndex === 0 && !isWaiting) {
-      // Wait before starting to type
-      setIsWaiting(true);
-      timeout = setTimeout(() => {
-        setIsWaiting(false);
-      }, lineDelay);
-    } else if (!isWaiting && currentCharIndex < currentLine.length) {
+    if (currentCharIndex < currentLine.length) {
       // Type next character
       timeout = setTimeout(() => {
         setCurrentText(currentLine.substring(0, currentCharIndex + 1));
         setCurrentCharIndex((prev) => prev + 1);
       }, typingSpeed);
-    } else if (!isWaiting && currentCharIndex >= currentLine.length) {
-      // Move to next line
-      timeout = setTimeout(() => {
-        setCurrentLineIndex((prev) => prev + 1);
-        setCurrentCharIndex(0);
-        setCurrentText("");
-      }, 800);
+    } else {
+      // Line completed, wait then move to next line
+      timeout = setTimeout(
+        () => {
+          setDisplayedLines((prev) => [...prev, currentLine]);
+          setCurrentLineIndex((prev) => prev + 1);
+          setCurrentCharIndex(0);
+          setCurrentText("");
+        },
+        isCommand ? 1000 : 500,
+      );
     }
 
     return () => clearTimeout(timeout);
-  }, [currentLineIndex, currentCharIndex, isWaiting, terminalLines]);
+  }, [currentLineIndex, currentCharIndex, terminalLines]);
 
-  const renderCompletedLines = () => {
-    return terminalLines
-      .slice(0, currentLineIndex)
-      .map((line, index) => (
-        <div key={index}>{renderTerminalLine(line, true)}</div>
-      ));
-  };
-
-  const renderTerminalLine = (line: string, isComplete: boolean) => {
-    const displayLine = isComplete ? line : currentText;
-
-    if (line.startsWith("$")) {
-      // Command line
-      const parts = displayLine.split(" ");
+  const renderLine = (line: string) => {
+    if (line.startsWith("$ ")) {
+      // Command line with syntax highlighting
       return (
-        <div className="flex items-start">
+        <div className="flex">
           <span className="text-green-400">$</span>
-          <span className="ml-2">
-            {parts.slice(1).map((part, i) => {
-              if (part === "npm" || part === "neurolint") {
-                return (
-                  <span key={i} className="text-blue-400">
-                    {part}{" "}
-                  </span>
-                );
-              }
-              if (part.startsWith("--")) {
-                return (
-                  <span key={i} className="text-cyan-400">
-                    {part}{" "}
-                  </span>
-                );
-              }
-              if (part.startsWith("@")) {
-                return (
-                  <span key={i} className="text-yellow-400">
-                    {part}{" "}
-                  </span>
-                );
-              }
-              if (part === "enterprise" || part === "team") {
-                return (
-                  <span key={i} className="text-purple-400">
-                    {part}{" "}
-                  </span>
-                );
-              }
-              return (
-                <span key={i} className="text-white">
-                  {part}{" "}
-                </span>
-              );
-            })}
-          </span>
+          <span className="text-blue-400 ml-2">npm</span>
+          <span className="text-white ml-2">install -g</span>
+          <span className="text-yellow-400 ml-2">@neurolint/cli</span>
+        </div>
+      );
+    } else if (line.startsWith("$ neurolint login")) {
+      return (
+        <div className="flex">
+          <span className="text-green-400">$</span>
+          <span className="text-blue-400 ml-2">neurolint</span>
+          <span className="text-white ml-2">login</span>
+          <span className="text-cyan-400 ml-2">--enterprise</span>
+        </div>
+      );
+    } else if (line.startsWith("$ neurolint enterprise")) {
+      return (
+        <div className="flex">
+          <span className="text-green-400">$</span>
+          <span className="text-blue-400 ml-2">neurolint</span>
+          <span className="text-purple-400 ml-2">enterprise</span>
+        </div>
+      );
+    } else if (line.startsWith("$ neurolint team")) {
+      return (
+        <div className="flex">
+          <span className="text-green-400">$</span>
+          <span className="text-blue-400 ml-2">neurolint</span>
+          <span className="text-purple-400 ml-2">team</span>
+          <span className="text-cyan-400 ml-2">--list</span>
         </div>
       );
     } else if (line.startsWith("✓")) {
-      // Success message
-      return <div className="text-green-400 pl-2">{displayLine}</div>;
+      return <div className="text-green-400 pl-2">{line}</div>;
     } else if (line.startsWith("⚠")) {
-      // Warning message
-      return <div className="text-yellow-400 pl-2">{displayLine}</div>;
+      return <div className="text-yellow-400 pl-2">{line}</div>;
     } else if (
       line === "NeuroLint CLI" ||
       line === "NeuroLint Enterprise Features" ||
       line === "Teams:"
     ) {
-      // Headers
-      return <div className="text-white font-bold pl-2">{displayLine}</div>;
+      return <div className="text-white font-bold pl-2">{line}</div>;
     } else if (line.startsWith("●")) {
-      // Team item
       return (
         <div className="text-gray-300 pl-4">
           <span className="text-green-400">●</span>
-          <span className="ml-2">{displayLine.substring(2)}</span>
+          <span className="ml-2">{line.substring(2)}</span>
         </div>
       );
     } else if (line.startsWith("  ")) {
-      // Indented info
-      return <div className="text-gray-300 pl-6">{displayLine}</div>;
-    } else if (line.includes("neurolint")) {
-      // Command help
-      const parts = displayLine.split(" - ");
+      return <div className="text-gray-300 pl-6">{line}</div>;
+    } else if (line.includes("neurolint") && line.includes(" - ")) {
+      const [command, description] = line.split(" - ");
       return (
         <div className="text-gray-300 pl-2">
-          <span className="text-cyan-400">{parts[0]}</span>
-          {parts[1] && <span> - {parts[1]}</span>}
+          <span className="text-cyan-400">{command}</span>
+          <span> - {description}</span>
         </div>
       );
     } else {
-      // Regular output
-      return <div className="text-gray-400 pl-2">{displayLine}</div>;
+      return <div className="text-gray-400 pl-2">{line}</div>;
     }
   };
 
   return (
     <div className="font-mono text-sm space-y-2 bg-black p-6 rounded-2xl border border-zinc-800 min-h-[400px]">
-      {renderCompletedLines()}
+      {/* Completed lines */}
+      {displayedLines.map((line, index) => (
+        <div key={index}>{renderLine(line)}</div>
+      ))}
+
+      {/* Currently typing line */}
       {currentLineIndex < terminalLines.length && (
         <div className="flex items-center">
-          {renderTerminalLine(terminalLines[currentLineIndex], false)}
-          {!isWaiting && (
-            <span className="text-green-400 ml-1 animate-pulse">█</span>
-          )}
+          <span className="text-white">{currentText}</span>
+          <span className="text-green-400 ml-1 animate-pulse">█</span>
         </div>
       )}
+
+      {/* Final prompt when done */}
       {currentLineIndex >= terminalLines.length && (
         <div className="flex items-center">
           <span className="text-green-400">$</span>
