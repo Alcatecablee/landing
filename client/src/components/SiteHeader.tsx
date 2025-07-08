@@ -130,7 +130,7 @@ export const SiteHeader = () => {
             {/* Login/Signup Buttons */}
             <div className="flex items-center space-x-3">
               <a
-                href="https://auth.neurolint.com/login"
+                href="https://app.neurolint.dev/login"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden md:inline-flex px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-300"
@@ -138,7 +138,7 @@ export const SiteHeader = () => {
                 Log In
               </a>
               <a
-                href="https://auth.neurolint.com/signup"
+                href="https://app.neurolint.dev/signup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-all duration-300 text-sm"
@@ -248,7 +248,7 @@ export const SiteHeader = () => {
                 {/* Auth Section in Mobile Menu */}
                 <div className="border-t border-zinc-800/50 mt-4 pt-4 px-4 space-y-3">
                   <a
-                    href="https://auth.neurolint.com/login"
+                    href="https://app.neurolint.dev/login"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full px-6 py-3 text-center text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-300"
@@ -257,7 +257,7 @@ export const SiteHeader = () => {
                     Log In
                   </a>
                   <a
-                    href="https://auth.neurolint.com/signup"
+                    href="https://app.neurolint.dev/signup"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full px-6 py-3 text-center bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-all duration-300"
