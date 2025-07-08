@@ -16,256 +16,175 @@ import {
   Check,
 } from "lucide-react";
 
-interface TerminalLine {
-  type: "command" | "output" | "success" | "warning" | "info";
-  content: string;
-  delay?: number;
-  typingSpeed?: number;
-}
-
-const terminalSequence: TerminalLine[] = [
-  {
-    type: "command",
-    content: "$ npm install -g @neurolint/cli",
-    delay: 1000,
-    typingSpeed: 80,
-  },
-  {
-    type: "output",
-    content: "Installing NeuroLint CLI...",
-    delay: 500,
-    typingSpeed: 30,
-  },
-  {
-    type: "success",
-    content: "✓ Installation complete",
-    delay: 1500,
-    typingSpeed: 40,
-  },
-  {
-    type: "command",
-    content: "$ neurolint login --enterprise",
-    delay: 1000,
-    typingSpeed: 90,
-  },
-  { type: "info", content: "NeuroLint CLI", delay: 300, typingSpeed: 50 },
-  {
-    type: "warning",
-    content: "⚠ Enterprise authentication required.",
-    delay: 200,
-    typingSpeed: 35,
-  },
-  {
-    type: "success",
-    content: "✓ Authentication successful",
-    delay: 2000,
-    typingSpeed: 40,
-  },
-  {
-    type: "command",
-    content: "$ neurolint enterprise",
-    delay: 800,
-    typingSpeed: 85,
-  },
-  {
-    type: "info",
-    content: "NeuroLint Enterprise Features",
-    delay: 300,
-    typingSpeed: 45,
-  },
-  {
-    type: "output",
-    content: "neurolint team - Team management",
-    delay: 100,
-    typingSpeed: 25,
-  },
-  {
-    type: "output",
-    content: "neurolint analytics - Analytics and reporting",
-    delay: 100,
-    typingSpeed: 25,
-  },
-  {
-    type: "output",
-    content: "neurolint webhook - Webhook management",
-    delay: 100,
-    typingSpeed: 25,
-  },
-  {
-    type: "output",
-    content: "neurolint sso - Single Sign-On",
-    delay: 100,
-    typingSpeed: 25,
-  },
-  {
-    type: "output",
-    content: "neurolint audit - Audit trail and compliance",
-    delay: 100,
-    typingSpeed: 25,
-  },
-  {
-    type: "command",
-    content: "$ neurolint team --list",
-    delay: 1200,
-    typingSpeed: 95,
-  },
-  { type: "info", content: "Teams:", delay: 200, typingSpeed: 40 },
-  {
-    type: "output",
-    content: "● Development Team (team-123)",
-    delay: 300,
-    typingSpeed: 30,
-  },
-  { type: "output", content: "  Members: 12", delay: 200, typingSpeed: 35 },
-  { type: "output", content: "  SSO: Enabled", delay: 200, typingSpeed: 35 },
-];
-
 function TypingTerminal() {
-  const [displayedLines, setDisplayedLines] = useState<string[]>([]);
+  const [currentText, setCurrentText] = useState("");
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
-  const [isTyping, setIsTyping] = useState(false);
-  const [showCursor, setShowCursor] = useState(true);
+  const [isWaiting, setIsWaiting] = useState(false);
+
+  const terminalLines = [
+    "$ npm install -g @neurolint/cli",
+    "Installing NeuroLint CLI...",
+    "✓ Installation complete",
+    "$ neurolint login --enterprise",
+    "NeuroLint CLI",
+    "⚠ Enterprise authentication required.",
+    "✓ Authentication successful",
+    "$ neurolint enterprise",
+    "NeuroLint Enterprise Features",
+    "neurolint team - Team management",
+    "neurolint analytics - Analytics and reporting",
+    "neurolint webhook - Webhook management",
+    "neurolint sso - Single Sign-On",
+    "neurolint audit - Audit trail and compliance",
+    "$ neurolint team --list",
+    "Teams:",
+    "● Development Team (team-123)",
+    "  Members: 12",
+    "  SSO: Enabled",
+  ];
 
   useEffect(() => {
-    if (currentLineIndex >= terminalSequence.length) {
-      setIsTyping(false);
-      return;
-    }
+    if (currentLineIndex >= terminalLines.length) return;
 
-    const currentLine = terminalSequence[currentLineIndex];
+    let timeout: NodeJS.Timeout;
+    const currentLine = terminalLines[currentLineIndex];
+    const isCommand = currentLine.startsWith("$");
+    const typingSpeed = isCommand ? 100 : 50;
+    const lineDelay = isCommand ? 1000 : 300;
 
-    if (currentCharIndex === 0) {
-      // Start typing a new line after delay
-      const timer = setTimeout(() => {
-        setIsTyping(true);
-      }, currentLine.delay || 0);
-      return () => clearTimeout(timer);
-    }
-
-    if (currentCharIndex <= currentLine.content.length) {
-      const timer = setTimeout(() => {
-        setDisplayedLines((prev) => {
-          const newLines = [...prev];
-          newLines[currentLineIndex] = currentLine.content.substring(
-            0,
-            currentCharIndex,
-          );
-          return newLines;
-        });
+    if (currentCharIndex === 0 && !isWaiting) {
+      // Wait before starting to type
+      setIsWaiting(true);
+      timeout = setTimeout(() => {
+        setIsWaiting(false);
+      }, lineDelay);
+    } else if (!isWaiting && currentCharIndex < currentLine.length) {
+      // Type next character
+      timeout = setTimeout(() => {
+        setCurrentText(currentLine.substring(0, currentCharIndex + 1));
         setCurrentCharIndex((prev) => prev + 1);
-      }, currentLine.typingSpeed || 50);
-      return () => clearTimeout(timer);
-    } else {
-      // Line completed, move to next line
-      setCurrentLineIndex((prev) => prev + 1);
-      setCurrentCharIndex(0);
-      setIsTyping(false);
+      }, typingSpeed);
+    } else if (!isWaiting && currentCharIndex >= currentLine.length) {
+      // Move to next line
+      timeout = setTimeout(() => {
+        setCurrentLineIndex((prev) => prev + 1);
+        setCurrentCharIndex(0);
+        setCurrentText("");
+      }, 800);
     }
-  }, [currentLineIndex, currentCharIndex]);
 
-  // Cursor blinking effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setShowCursor((prev) => !prev);
-    }, 500);
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearTimeout(timeout);
+  }, [currentLineIndex, currentCharIndex, isWaiting, terminalLines]);
 
-  const renderLine = (
-    content: string,
-    index: number,
-    isCurrentLine: boolean,
-  ) => {
-    const line = terminalSequence[index];
-    if (!line) return null;
+  const renderCompletedLines = () => {
+    return terminalLines
+      .slice(0, currentLineIndex)
+      .map((line, index) => (
+        <div key={index}>{renderTerminalLine(line, true)}</div>
+      ));
+  };
 
-    const parts = content.split(
-      /(\$|npm|neurolint|install|login|enterprise|team|--\w+|@\w+\/\w+|✓|⚠|●)/g,
-    );
+  const renderTerminalLine = (line: string, isComplete: boolean) => {
+    const displayLine = isComplete ? line : currentText;
 
-    return (
-      <div key={index} className="flex items-center">
-        {line.type === "command" && (
-          <>
-            <span className="text-green-400">$</span>
-            <span className="ml-2">
-              {parts.map((part, i) => {
-                if (part === "npm" || part === "neurolint")
-                  return (
-                    <span key={i} className="text-blue-400">
-                      {part}
-                    </span>
-                  );
-                if (part.startsWith("--"))
-                  return (
-                    <span key={i} className="text-cyan-400">
-                      {part}
-                    </span>
-                  );
-                if (part.startsWith("@"))
-                  return (
-                    <span key={i} className="text-yellow-400">
-                      {part}
-                    </span>
-                  );
-                if (part === "enterprise" || part === "team")
-                  return (
-                    <span key={i} className="text-purple-400">
-                      {part}
-                    </span>
-                  );
+    if (line.startsWith("$")) {
+      // Command line
+      const parts = displayLine.split(" ");
+      return (
+        <div className="flex items-start">
+          <span className="text-green-400">$</span>
+          <span className="ml-2">
+            {parts.slice(1).map((part, i) => {
+              if (part === "npm" || part === "neurolint") {
                 return (
-                  <span key={i} className="text-white">
-                    {part}
+                  <span key={i} className="text-blue-400">
+                    {part}{" "}
                   </span>
                 );
-              })}
-            </span>
-          </>
-        )}
-        {line.type === "output" && (
-          <span className="text-gray-300 pl-2">
-            {parts.map((part, i) => {
-              if (part === "neurolint" || part.startsWith("neurolint "))
+              }
+              if (part.startsWith("--")) {
                 return (
                   <span key={i} className="text-cyan-400">
-                    {part}
+                    {part}{" "}
                   </span>
                 );
-              if (part === "●")
+              }
+              if (part.startsWith("@")) {
                 return (
-                  <span key={i} className="text-green-400">
-                    {part}
+                  <span key={i} className="text-yellow-400">
+                    {part}{" "}
                   </span>
                 );
-              return <span key={i}>{part}</span>;
+              }
+              if (part === "enterprise" || part === "team") {
+                return (
+                  <span key={i} className="text-purple-400">
+                    {part}{" "}
+                  </span>
+                );
+              }
+              return (
+                <span key={i} className="text-white">
+                  {part}{" "}
+                </span>
+              );
             })}
           </span>
-        )}
-        {line.type === "success" && (
-          <span className="text-green-400 pl-2">{content}</span>
-        )}
-        {line.type === "warning" && (
-          <span className="text-yellow-400 pl-2">{content}</span>
-        )}
-        {line.type === "info" && (
-          <span className="text-white font-bold pl-2">{content}</span>
-        )}
-        {isCurrentLine && isTyping && showCursor && (
-          <span className="text-green-400 ml-1 animate-pulse">█</span>
-        )}
-      </div>
-    );
+        </div>
+      );
+    } else if (line.startsWith("✓")) {
+      // Success message
+      return <div className="text-green-400 pl-2">{displayLine}</div>;
+    } else if (line.startsWith("⚠")) {
+      // Warning message
+      return <div className="text-yellow-400 pl-2">{displayLine}</div>;
+    } else if (
+      line === "NeuroLint CLI" ||
+      line === "NeuroLint Enterprise Features" ||
+      line === "Teams:"
+    ) {
+      // Headers
+      return <div className="text-white font-bold pl-2">{displayLine}</div>;
+    } else if (line.startsWith("●")) {
+      // Team item
+      return (
+        <div className="text-gray-300 pl-4">
+          <span className="text-green-400">●</span>
+          <span className="ml-2">{displayLine.substring(2)}</span>
+        </div>
+      );
+    } else if (line.startsWith("  ")) {
+      // Indented info
+      return <div className="text-gray-300 pl-6">{displayLine}</div>;
+    } else if (line.includes("neurolint")) {
+      // Command help
+      const parts = displayLine.split(" - ");
+      return (
+        <div className="text-gray-300 pl-2">
+          <span className="text-cyan-400">{parts[0]}</span>
+          {parts[1] && <span> - {parts[1]}</span>}
+        </div>
+      );
+    } else {
+      // Regular output
+      return <div className="text-gray-400 pl-2">{displayLine}</div>;
+    }
   };
 
   return (
-    <div className="font-mono text-sm space-y-3 bg-black p-6 rounded-2xl border border-zinc-800 min-h-[400px]">
-      {displayedLines.map((line, index) =>
-        renderLine(line, index, index === currentLineIndex - 1),
+    <div className="font-mono text-sm space-y-2 bg-black p-6 rounded-2xl border border-zinc-800 min-h-[400px]">
+      {renderCompletedLines()}
+      {currentLineIndex < terminalLines.length && (
+        <div className="flex items-center">
+          {renderTerminalLine(terminalLines[currentLineIndex], false)}
+          {!isWaiting && (
+            <span className="text-green-400 ml-1 animate-pulse">█</span>
+          )}
+        </div>
       )}
-      {currentLineIndex >= terminalSequence.length && (
-        <div className="flex items-center pt-1">
+      {currentLineIndex >= terminalLines.length && (
+        <div className="flex items-center">
           <span className="text-green-400">$</span>
           <span className="text-green-400 ml-2 animate-pulse">█</span>
         </div>
