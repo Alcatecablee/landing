@@ -220,7 +220,7 @@ export default function Index() {
             code
           </p>
           <a
-            href="https://test.neurolint.com"
+            href="https://app.neurolint.dev"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl"
@@ -549,7 +549,7 @@ export default function Index() {
                 <li>• 99.9% uptime SLA</li>
                 <li>• Sub-100ms response times</li>
                 <li>• Auto-scaling infrastructure</li>
-                <li>• Global CDN distribution</li>
+                <li>��� Global CDN distribution</li>
               </ul>
             </div>
 
@@ -641,7 +641,7 @@ export default function Index() {
           <div className="text-center mt-16">
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://docs.neurolint.com/api"
+                href="https://docs.neurolint.dev/api"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block"
@@ -651,7 +651,7 @@ export default function Index() {
                 </button>
               </a>
               <a
-                href="https://neurolint.com/contact"
+                href="https://app.neurolint.dev/contact"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -752,7 +752,7 @@ export default function Index() {
                 Start Free Trial
               </a>
               <a
-                href="https://pricing.neurolint.com"
+                href="https://app.neurolint.dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-10 py-5 bg-black/50 text-white font-black rounded-2xl border-2 border-zinc-800 hover:bg-black hover:border-zinc-600 transition-all duration-300 text-lg backdrop-blur-xl hover:scale-105"
