@@ -110,7 +110,7 @@ export const SiteHeader = () => {
                 { href: "https://forum.neurolint.dev", label: "Forum" },
               ].map((item, index) => (
                 <a
-                  key={item.href}
+                  key={item.label}
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -219,7 +219,7 @@ export const SiteHeader = () => {
                   { href: "https://forum.neurolint.dev", label: "Forum" },
                 ].map((item, index) => (
                   <a
-                    key={item.href}
+                    key={item.label}
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
