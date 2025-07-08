@@ -143,53 +143,87 @@ export function CLISection() {
               <Terminal className="w-5 h-5" />
               <span className="font-medium">Terminal</span>
               <div className="flex gap-2 ml-auto">
-                <div className="w-3 h-3 bg-zinc-600 rounded-full"></div>
-                <div className="w-3 h-3 bg-zinc-600 rounded-full"></div>
-                <div className="w-3 h-3 bg-zinc-600 rounded-full"></div>
+                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
               </div>
             </div>
-            <div className="font-mono text-sm space-y-3 bg-black/50 p-6 rounded-2xl">
-              <div className="text-white font-medium">
-                $ npm install -g @neurolint/cli
+            <div className="font-mono text-sm space-y-3 bg-black p-6 rounded-2xl border border-zinc-800">
+              <div className="flex items-center">
+                <span className="text-green-400">$</span>
+                <span className="text-blue-400 ml-2">npm</span>
+                <span className="text-white ml-2">install -g</span>
+                <span className="text-yellow-400 ml-2">@neurolint/cli</span>
               </div>
-              <div className="text-gray-300">Installing NeuroLint CLI...</div>
-              <div className="text-white font-medium">
-                $ neurolint login --enterprise
+              <div className="text-gray-400 pl-2">
+                Installing NeuroLint CLI...
               </div>
-              <div className="text-white font-medium">NeuroLint CLI</div>
-              <div className="text-gray-300">
-                Enterprise authentication required.
+              <div className="text-green-400 pl-2">✓ Installation complete</div>
+
+              <div className="flex items-center pt-2">
+                <span className="text-green-400">$</span>
+                <span className="text-blue-400 ml-2">neurolint</span>
+                <span className="text-white ml-2">login</span>
+                <span className="text-cyan-400 ml-2">--enterprise</span>
               </div>
-              <div className="text-gray-300">Authentication successful</div>
-              <div className="text-white font-medium">
-                $ neurolint enterprise
+              <div className="text-white font-bold pl-2">NeuroLint CLI</div>
+              <div className="text-yellow-400 pl-2">
+                ⚠ Enterprise authentication required.
               </div>
-              <div className="text-white font-medium">
+              <div className="text-green-400 pl-2">
+                ✓ Authentication successful
+              </div>
+
+              <div className="flex items-center pt-2">
+                <span className="text-green-400">$</span>
+                <span className="text-blue-400 ml-2">neurolint</span>
+                <span className="text-purple-400 ml-2">enterprise</span>
+              </div>
+              <div className="text-white font-bold pl-2">
                 NeuroLint Enterprise Features
               </div>
-              <div className="text-gray-300">
-                neurolint team - Team management
+              <div className="text-gray-300 pl-2">
+                <span className="text-cyan-400">neurolint team</span> - Team
+                management
               </div>
-              <div className="text-gray-300">
-                neurolint analytics - Analytics and reporting
+              <div className="text-gray-300 pl-2">
+                <span className="text-cyan-400">neurolint analytics</span> -
+                Analytics and reporting
               </div>
-              <div className="text-gray-300">
-                neurolint webhook - Webhook management
+              <div className="text-gray-300 pl-2">
+                <span className="text-cyan-400">neurolint webhook</span> -
+                Webhook management
               </div>
-              <div className="text-gray-300">
-                neurolint sso - Single Sign-On
+              <div className="text-gray-300 pl-2">
+                <span className="text-cyan-400">neurolint sso</span> - Single
+                Sign-On
               </div>
-              <div className="text-gray-300">
-                neurolint audit - Audit trail and compliance
+              <div className="text-gray-300 pl-2">
+                <span className="text-cyan-400">neurolint audit</span> - Audit
+                trail and compliance
               </div>
-              <div className="text-white font-medium">
-                $ neurolint team --list
+
+              <div className="flex items-center pt-2">
+                <span className="text-green-400">$</span>
+                <span className="text-blue-400 ml-2">neurolint</span>
+                <span className="text-purple-400 ml-2">team</span>
+                <span className="text-cyan-400 ml-2">--list</span>
               </div>
-              <div className="text-white font-medium">Teams:</div>
-              <div className="text-gray-300">Development Team (team-123)</div>
-              <div className="text-gray-300"> Members: 12</div>
-              <div className="text-gray-300"> SSO: Enabled</div>
-              <div className="text-white animate-pulse">█</div>
+              <div className="text-white font-bold pl-2">Teams:</div>
+              <div className="text-gray-300 pl-4">
+                <span className="text-green-400">●</span> Development Team
+                <span className="text-gray-500">(team-123)</span>
+              </div>
+              <div className="text-gray-300 pl-6">
+                Members: <span className="text-yellow-400">12</span>
+              </div>
+              <div className="text-gray-300 pl-6">
+                SSO: <span className="text-green-400">Enabled</span>
+              </div>
+              <div className="flex items-center pt-1">
+                <span className="text-green-400">$</span>
+                <span className="text-green-400 ml-2 animate-pulse">█</span>
+              </div>
             </div>
           </div>
         </div>
