@@ -79,7 +79,7 @@ export function CLISection() {
                   )}
                 </button>
                 <a
-                  href="https://docs.neurolint.com/cli"
+                  href="https://docs.neurolint.dev/cli"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="border-2 border-zinc-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:border-zinc-600 transition-all duration-300 flex items-center gap-3"
