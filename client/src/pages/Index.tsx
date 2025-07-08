@@ -165,8 +165,10 @@ export default function Index() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 md:gap-8 justify-center animate-slide-in-up animate-delay-700">
-            <Link
-              to="/app"
+            <a
+              href="https://app.neurolint.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative px-8 md:px-10 py-4 md:py-5 bg-white text-black font-black rounded-xl md:rounded-2xl hover:bg-gray-100 active:bg-gray-200 transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) flex items-center justify-center gap-3 text-lg md:text-xl shadow-2xl hover:shadow-white/30 hover:scale-105 active:scale-95 focus:scale-105 focus:outline-none focus:ring-4 focus:ring-white/30 focus:ring-offset-4 focus:ring-offset-black touch-manipulation"
             >
               Start Analyzing
@@ -183,7 +185,7 @@ export default function Index() {
                   d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
               </svg>
-            </Link>
+            </a>
 
             <a
               href="#features"
@@ -218,13 +220,15 @@ export default function Index() {
             Try our interactive test suite to see how NeuroLint transforms your
             code
           </p>
-          <Link
-            to="/test"
+          <a
+            href="https://test.neurolint.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl"
           >
             <Play className="w-6 h-6" />
             Try Test Suite
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -546,7 +550,7 @@ export default function Index() {
                 <li>• 99.9% uptime SLA</li>
                 <li>• Sub-100ms response times</li>
                 <li>• Auto-scaling infrastructure</li>
-                <li>• Global CDN distribution</li>
+                <li>�� Global CDN distribution</li>
               </ul>
             </div>
 
@@ -637,14 +641,25 @@ export default function Index() {
 
           <div className="text-center mt-16">
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/api-docs" className="inline-block">
+              <a
+                href="https://docs.neurolint.com/api"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
                 <button className="bg-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl">
                   View Full Documentation
                 </button>
               </a>
-              <button className="border-2 border-zinc-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:border-zinc-600 transition-all duration-300">
-                Request Enterprise Demo
-              </button>
+              <a
+                href="https://neurolint.com/contact"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="border-2 border-zinc-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:border-zinc-600 transition-all duration-300">
+                  Request Enterprise Demo
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -729,18 +744,22 @@ export default function Index() {
               transformation platform
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link
-                to="/app"
+              <a
+                href="https://app.neurolint.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-10 py-5 bg-white text-black font-black rounded-2xl hover:bg-gray-100 transition-all duration-300 text-lg shadow-2xl hover:scale-105"
               >
                 Start Free Trial
-              </Link>
-              <Link
-                to="/pricing"
+              </a>
+              <a
+                href="https://pricing.neurolint.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-10 py-5 bg-black/50 text-white font-black rounded-2xl border-2 border-zinc-800 hover:bg-black hover:border-zinc-600 transition-all duration-300 text-lg backdrop-blur-xl hover:scale-105"
               >
                 View Pricing
-              </Link>
+              </a>
             </div>
           </div>
         </div>
