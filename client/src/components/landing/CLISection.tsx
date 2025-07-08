@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Terminal,
   Users,
@@ -15,6 +15,264 @@ import {
   Webhook,
   Check,
 } from "lucide-react";
+
+interface TerminalLine {
+  type: "command" | "output" | "success" | "warning" | "info";
+  content: string;
+  delay?: number;
+  typingSpeed?: number;
+}
+
+const terminalSequence: TerminalLine[] = [
+  {
+    type: "command",
+    content: "$ npm install -g @neurolint/cli",
+    delay: 1000,
+    typingSpeed: 80,
+  },
+  {
+    type: "output",
+    content: "Installing NeuroLint CLI...",
+    delay: 500,
+    typingSpeed: 30,
+  },
+  {
+    type: "success",
+    content: "✓ Installation complete",
+    delay: 1500,
+    typingSpeed: 40,
+  },
+  {
+    type: "command",
+    content: "$ neurolint login --enterprise",
+    delay: 1000,
+    typingSpeed: 90,
+  },
+  { type: "info", content: "NeuroLint CLI", delay: 300, typingSpeed: 50 },
+  {
+    type: "warning",
+    content: "⚠ Enterprise authentication required.",
+    delay: 200,
+    typingSpeed: 35,
+  },
+  {
+    type: "success",
+    content: "✓ Authentication successful",
+    delay: 2000,
+    typingSpeed: 40,
+  },
+  {
+    type: "command",
+    content: "$ neurolint enterprise",
+    delay: 800,
+    typingSpeed: 85,
+  },
+  {
+    type: "info",
+    content: "NeuroLint Enterprise Features",
+    delay: 300,
+    typingSpeed: 45,
+  },
+  {
+    type: "output",
+    content: "neurolint team - Team management",
+    delay: 100,
+    typingSpeed: 25,
+  },
+  {
+    type: "output",
+    content: "neurolint analytics - Analytics and reporting",
+    delay: 100,
+    typingSpeed: 25,
+  },
+  {
+    type: "output",
+    content: "neurolint webhook - Webhook management",
+    delay: 100,
+    typingSpeed: 25,
+  },
+  {
+    type: "output",
+    content: "neurolint sso - Single Sign-On",
+    delay: 100,
+    typingSpeed: 25,
+  },
+  {
+    type: "output",
+    content: "neurolint audit - Audit trail and compliance",
+    delay: 100,
+    typingSpeed: 25,
+  },
+  {
+    type: "command",
+    content: "$ neurolint team --list",
+    delay: 1200,
+    typingSpeed: 95,
+  },
+  { type: "info", content: "Teams:", delay: 200, typingSpeed: 40 },
+  {
+    type: "output",
+    content: "● Development Team (team-123)",
+    delay: 300,
+    typingSpeed: 30,
+  },
+  { type: "output", content: "  Members: 12", delay: 200, typingSpeed: 35 },
+  { type: "output", content: "  SSO: Enabled", delay: 200, typingSpeed: 35 },
+];
+
+function TypingTerminal() {
+  const [displayedLines, setDisplayedLines] = useState<string[]>([]);
+  const [currentLineIndex, setCurrentLineIndex] = useState(0);
+  const [currentCharIndex, setCurrentCharIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(false);
+  const [showCursor, setShowCursor] = useState(true);
+
+  useEffect(() => {
+    if (currentLineIndex >= terminalSequence.length) {
+      setIsTyping(false);
+      return;
+    }
+
+    const currentLine = terminalSequence[currentLineIndex];
+
+    if (currentCharIndex === 0) {
+      // Start typing a new line after delay
+      const timer = setTimeout(() => {
+        setIsTyping(true);
+      }, currentLine.delay || 0);
+      return () => clearTimeout(timer);
+    }
+
+    if (currentCharIndex <= currentLine.content.length) {
+      const timer = setTimeout(() => {
+        setDisplayedLines((prev) => {
+          const newLines = [...prev];
+          newLines[currentLineIndex] = currentLine.content.substring(
+            0,
+            currentCharIndex,
+          );
+          return newLines;
+        });
+        setCurrentCharIndex((prev) => prev + 1);
+      }, currentLine.typingSpeed || 50);
+      return () => clearTimeout(timer);
+    } else {
+      // Line completed, move to next line
+      setCurrentLineIndex((prev) => prev + 1);
+      setCurrentCharIndex(0);
+      setIsTyping(false);
+    }
+  }, [currentLineIndex, currentCharIndex]);
+
+  // Cursor blinking effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 500);
+    return () => clearInterval(interval);
+  }, []);
+
+  const renderLine = (
+    content: string,
+    index: number,
+    isCurrentLine: boolean,
+  ) => {
+    const line = terminalSequence[index];
+    if (!line) return null;
+
+    const parts = content.split(
+      /(\$|npm|neurolint|install|login|enterprise|team|--\w+|@\w+\/\w+|✓|⚠|●)/g,
+    );
+
+    return (
+      <div key={index} className="flex items-center">
+        {line.type === "command" && (
+          <>
+            <span className="text-green-400">$</span>
+            <span className="ml-2">
+              {parts.map((part, i) => {
+                if (part === "npm" || part === "neurolint")
+                  return (
+                    <span key={i} className="text-blue-400">
+                      {part}
+                    </span>
+                  );
+                if (part.startsWith("--"))
+                  return (
+                    <span key={i} className="text-cyan-400">
+                      {part}
+                    </span>
+                  );
+                if (part.startsWith("@"))
+                  return (
+                    <span key={i} className="text-yellow-400">
+                      {part}
+                    </span>
+                  );
+                if (part === "enterprise" || part === "team")
+                  return (
+                    <span key={i} className="text-purple-400">
+                      {part}
+                    </span>
+                  );
+                return (
+                  <span key={i} className="text-white">
+                    {part}
+                  </span>
+                );
+              })}
+            </span>
+          </>
+        )}
+        {line.type === "output" && (
+          <span className="text-gray-300 pl-2">
+            {parts.map((part, i) => {
+              if (part === "neurolint" || part.startsWith("neurolint "))
+                return (
+                  <span key={i} className="text-cyan-400">
+                    {part}
+                  </span>
+                );
+              if (part === "●")
+                return (
+                  <span key={i} className="text-green-400">
+                    {part}
+                  </span>
+                );
+              return <span key={i}>{part}</span>;
+            })}
+          </span>
+        )}
+        {line.type === "success" && (
+          <span className="text-green-400 pl-2">{content}</span>
+        )}
+        {line.type === "warning" && (
+          <span className="text-yellow-400 pl-2">{content}</span>
+        )}
+        {line.type === "info" && (
+          <span className="text-white font-bold pl-2">{content}</span>
+        )}
+        {isCurrentLine && isTyping && showCursor && (
+          <span className="text-green-400 ml-1 animate-pulse">█</span>
+        )}
+      </div>
+    );
+  };
+
+  return (
+    <div className="font-mono text-sm space-y-3 bg-black p-6 rounded-2xl border border-zinc-800 min-h-[400px]">
+      {displayedLines.map((line, index) =>
+        renderLine(line, index, index === currentLineIndex - 1),
+      )}
+      {currentLineIndex >= terminalSequence.length && (
+        <div className="flex items-center pt-1">
+          <span className="text-green-400">$</span>
+          <span className="text-green-400 ml-2 animate-pulse">█</span>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export function CLISection() {
   const [copied, setCopied] = useState(false);
@@ -148,83 +406,7 @@ export function CLISection() {
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
               </div>
             </div>
-            <div className="font-mono text-sm space-y-3 bg-black p-6 rounded-2xl border border-zinc-800">
-              <div className="flex items-center">
-                <span className="text-green-400">$</span>
-                <span className="text-blue-400 ml-2">npm</span>
-                <span className="text-white ml-2">install -g</span>
-                <span className="text-yellow-400 ml-2">@neurolint/cli</span>
-              </div>
-              <div className="text-gray-400 pl-2">
-                Installing NeuroLint CLI...
-              </div>
-              <div className="text-green-400 pl-2">✓ Installation complete</div>
-
-              <div className="flex items-center pt-2">
-                <span className="text-green-400">$</span>
-                <span className="text-blue-400 ml-2">neurolint</span>
-                <span className="text-white ml-2">login</span>
-                <span className="text-cyan-400 ml-2">--enterprise</span>
-              </div>
-              <div className="text-white font-bold pl-2">NeuroLint CLI</div>
-              <div className="text-yellow-400 pl-2">
-                ⚠ Enterprise authentication required.
-              </div>
-              <div className="text-green-400 pl-2">
-                ✓ Authentication successful
-              </div>
-
-              <div className="flex items-center pt-2">
-                <span className="text-green-400">$</span>
-                <span className="text-blue-400 ml-2">neurolint</span>
-                <span className="text-purple-400 ml-2">enterprise</span>
-              </div>
-              <div className="text-white font-bold pl-2">
-                NeuroLint Enterprise Features
-              </div>
-              <div className="text-gray-300 pl-2">
-                <span className="text-cyan-400">neurolint team</span> - Team
-                management
-              </div>
-              <div className="text-gray-300 pl-2">
-                <span className="text-cyan-400">neurolint analytics</span> -
-                Analytics and reporting
-              </div>
-              <div className="text-gray-300 pl-2">
-                <span className="text-cyan-400">neurolint webhook</span> -
-                Webhook management
-              </div>
-              <div className="text-gray-300 pl-2">
-                <span className="text-cyan-400">neurolint sso</span> - Single
-                Sign-On
-              </div>
-              <div className="text-gray-300 pl-2">
-                <span className="text-cyan-400">neurolint audit</span> - Audit
-                trail and compliance
-              </div>
-
-              <div className="flex items-center pt-2">
-                <span className="text-green-400">$</span>
-                <span className="text-blue-400 ml-2">neurolint</span>
-                <span className="text-purple-400 ml-2">team</span>
-                <span className="text-cyan-400 ml-2">--list</span>
-              </div>
-              <div className="text-white font-bold pl-2">Teams:</div>
-              <div className="text-gray-300 pl-4">
-                <span className="text-green-400">●</span> Development Team
-                <span className="text-gray-500">(team-123)</span>
-              </div>
-              <div className="text-gray-300 pl-6">
-                Members: <span className="text-yellow-400">12</span>
-              </div>
-              <div className="text-gray-300 pl-6">
-                SSO: <span className="text-green-400">Enabled</span>
-              </div>
-              <div className="flex items-center pt-1">
-                <span className="text-green-400">$</span>
-                <span className="text-green-400 ml-2 animate-pulse">█</span>
-              </div>
-            </div>
+            <TypingTerminal />
           </div>
         </div>
       </div>
