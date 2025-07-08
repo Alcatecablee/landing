@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
 import { FAQSection } from "@/components/landing/FAQSection";
 import { TechnologySection } from "@/components/landing/TechnologySection";
 import { CLISection } from "@/components/landing/CLISection";
@@ -550,7 +549,7 @@ export default function Index() {
                 <li>• 99.9% uptime SLA</li>
                 <li>• Sub-100ms response times</li>
                 <li>• Auto-scaling infrastructure</li>
-                <li>�� Global CDN distribution</li>
+                <li>• Global CDN distribution</li>
               </ul>
             </div>
 
