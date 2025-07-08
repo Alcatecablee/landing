@@ -104,10 +104,10 @@ export const SiteHeader = () => {
               aria-label="Main navigation"
             >
               {[
-                { href: "https://app.neurolint.com", label: "App" },
-                { href: "https://dashboard.neurolint.com", label: "Dashboard" },
-                { href: "https://docs.neurolint.com", label: "Docs" },
-                { href: "https://billing.neurolint.com", label: "Billing" },
+                { href: "https://app.neurolint.dev", label: "App" },
+                { href: "https://app.neurolint.dev", label: "Dashboard" },
+                { href: "https://docs.neurolint.dev", label: "Docs" },
+                { href: "https://forum.neurolint.dev", label: "Forum" },
               ].map((item, index) => (
                 <a
                   key={item.href}
@@ -213,13 +213,10 @@ export const SiteHeader = () => {
             >
               <nav className="px-4 py-6 space-y-1" role="navigation">
                 {[
-                  { href: "https://app.neurolint.com", label: "App" },
-                  {
-                    href: "https://dashboard.neurolint.com",
-                    label: "Dashboard",
-                  },
-                  { href: "https://docs.neurolint.com", label: "Docs" },
-                  { href: "https://billing.neurolint.com", label: "Billing" },
+                  { href: "https://app.neurolint.dev", label: "App" },
+                  { href: "https://app.neurolint.dev", label: "Dashboard" },
+                  { href: "https://docs.neurolint.dev", label: "Docs" },
+                  { href: "https://forum.neurolint.dev", label: "Forum" },
                 ].map((item, index) => (
                   <a
                     key={item.href}
