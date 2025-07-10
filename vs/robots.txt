@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vs.neurolint.dev/sitemap.xml
