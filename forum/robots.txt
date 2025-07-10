@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://forum.neurolint.dev/sitemap.xml
