@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Home, Mail } from "lucide-react";
+import { Home, Mail, Zap, Settings, Code, Database } from "lucide-react";
 
 interface NotFoundProps {
   onJoinWaitlist?: () => void;
@@ -26,7 +26,7 @@ export function NotFound({ onJoinWaitlist }: NotFoundProps) {
         {/* Call to Action */}
         <div className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 mb-8 backdrop-blur-xl">
           <div className="mb-6">
-            <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-4">
               <Mail className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-2">
@@ -60,31 +60,37 @@ export function NotFound({ onJoinWaitlist }: NotFoundProps) {
         {/* Features Teaser */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
           <div className="p-4 bg-zinc-900/30 rounded-xl border border-zinc-800">
-            <h4 className="font-semibold text-white mb-2">
-              🧠 Advanced AI Analysis
-            </h4>
+            <div className="flex items-center gap-2 mb-2">
+              <Database className="w-5 h-5 text-white" />
+              <h4 className="font-semibold text-white">Advanced AI Analysis</h4>
+            </div>
             <p className="text-zinc-400 text-sm">
               6-layer code analysis using cutting-edge AI and machine learning
             </p>
           </div>
           <div className="p-4 bg-zinc-900/30 rounded-xl border border-zinc-800">
-            <h4 className="font-semibold text-white mb-2">
-              ⚡ Real-time Feedback
-            </h4>
+            <div className="flex items-center gap-2 mb-2">
+              <Zap className="w-5 h-5 text-white" />
+              <h4 className="font-semibold text-white">Real-time Feedback</h4>
+            </div>
             <p className="text-zinc-400 text-sm">
               Get instant suggestions and improvements as you code
             </p>
           </div>
           <div className="p-4 bg-zinc-900/30 rounded-xl border border-zinc-800">
-            <h4 className="font-semibold text-white mb-2">🔧 Auto-fixes</h4>
+            <div className="flex items-center gap-2 mb-2">
+              <Settings className="w-5 h-5 text-white" />
+              <h4 className="font-semibold text-white">Auto-fixes</h4>
+            </div>
             <p className="text-zinc-400 text-sm">
               Automatically apply code transformations and optimizations
             </p>
           </div>
           <div className="p-4 bg-zinc-900/30 rounded-xl border border-zinc-800">
-            <h4 className="font-semibold text-white mb-2">
-              🔌 IDE Integration
-            </h4>
+            <div className="flex items-center gap-2 mb-2">
+              <Code className="w-5 h-5 text-white" />
+              <h4 className="font-semibold text-white">IDE Integration</h4>
+            </div>
             <p className="text-zinc-400 text-sm">
               Seamless integration with VS Code, CLI, and API access
             </p>
