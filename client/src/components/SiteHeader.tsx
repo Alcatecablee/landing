@@ -77,10 +77,10 @@ export const SiteHeader = ({ onJoinWaitlist }: SiteHeaderProps) => {
       </a>
 
       <header
-        className={`sticky top-0 z-50 w-full border-b border-zinc-800/50 backdrop-blur-xl transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) ${
+        className={`sticky top-0 z-50 w-full border-b backdrop-blur-xl transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) ${
           isScrolled
-            ? "bg-black/98 shadow-2xl shadow-black/50 border-zinc-700/70"
-            : "bg-black/95 border-zinc-800/50"
+            ? "bg-black/98 shadow-2xl shadow-black/50 border-zinc-700/80"
+            : "bg-black/95 border-zinc-800/60"
         }`}
         role="banner"
         aria-label="Site header"
@@ -90,13 +90,14 @@ export const SiteHeader = ({ onJoinWaitlist }: SiteHeaderProps) => {
             <div className="flex items-center">
               <a
                 href="/"
-                className="flex items-center group"
+                className="flex items-center group transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-zinc-600 focus:ring-offset-2 focus:ring-offset-black rounded-lg p-1"
                 aria-label="NeuroLint home"
               >
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2Fff4a9c5485bd483f9de4955855068620%2F782095f7d5454085bbee2289a7106f2e?format=webp&width=800"
                   alt="NeuroLint Logo"
-                  className="h-8 w-auto"
+                  className="h-8 w-auto transition-all duration-300 group-hover:brightness-110"
+                  loading="eager"
                 />
               </a>
             </div>
@@ -133,7 +134,7 @@ export const SiteHeader = ({ onJoinWaitlist }: SiteHeaderProps) => {
                   <button
                     key={item.label}
                     onClick={() => onJoinWaitlist?.()}
-                    className="px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) transform hover:scale-105 hover:-translate-y-0.5 focus:scale-105 focus:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 focus:ring-offset-black relative touch-manipulation"
+                    className="px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) transform hover:scale-105 hover:-translate-y-0.5 focus:scale-105 focus:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-zinc-500/50 focus:ring-offset-2 focus:ring-offset-black relative touch-manipulation will-change-transform"
                     style={{
                       animationDelay: `${index * 75}ms`,
                       animation: isScrolled
@@ -149,7 +150,7 @@ export const SiteHeader = ({ onJoinWaitlist }: SiteHeaderProps) => {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) transform hover:scale-105 hover:-translate-y-0.5 focus:scale-105 focus:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 focus:ring-offset-black relative touch-manipulation"
+                    className="px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) transform hover:scale-105 hover:-translate-y-0.5 focus:scale-105 focus:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-zinc-500/50 focus:ring-offset-2 focus:ring-offset-black relative touch-manipulation will-change-transform"
                     style={{
                       animationDelay: `${index * 75}ms`,
                       animation: isScrolled
@@ -167,13 +168,13 @@ export const SiteHeader = ({ onJoinWaitlist }: SiteHeaderProps) => {
             <div className="flex items-center space-x-3">
               <button
                 onClick={() => onJoinWaitlist?.()}
-                className="hidden md:inline-flex px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-300"
+                className="hidden md:inline-flex px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-500 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-zinc-500/50 focus:ring-offset-2 focus:ring-offset-black"
               >
                 Log In
               </button>
               <button
                 onClick={() => onJoinWaitlist?.()}
-                className="px-4 py-2 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-all duration-300 text-sm"
+                className="px-4 py-2 bg-white text-black font-semibold rounded-lg hover:bg-zinc-100 active:bg-zinc-200 transition-all duration-500 text-sm transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 focus:ring-offset-black shadow-lg hover:shadow-xl"
               >
                 Join Waitlist
               </button>
