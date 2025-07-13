@@ -7,100 +7,149 @@ interface NotFoundProps {
 
 export function NotFound({ onJoinWaitlist }: NotFoundProps) {
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center px-4">
-      <div className="text-center max-w-2xl">
-        {/* 404 Header */}
-        <div className="mb-8">
-          <h1 className="text-8xl md:text-9xl font-black text-zinc-800 mb-4">
-            404
-          </h1>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            App Not Ready Yet
-          </h2>
-          <p className="text-xl text-zinc-300 leading-relaxed">
-            The NeuroLint application is currently under development. We're
-            working hard to bring you the most advanced code analysis platform.
-          </p>
-        </div>
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          className="absolute top-1/3 -left-1/4 w-1/3 h-1/3 bg-zinc-900/15 rounded-full blur-3xl animate-pulse"
+          style={{ animationDuration: "5s" }}
+        ></div>
+        <div
+          className="absolute bottom-1/3 -right-1/4 w-1/3 h-1/3 bg-zinc-800/10 rounded-full blur-3xl animate-pulse"
+          style={{ animationDuration: "7s", animationDelay: "1s" }}
+        ></div>
+      </div>
 
-        {/* Call to Action */}
-        <div className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 mb-8 backdrop-blur-xl">
-          <div className="mb-6">
-            <div className="w-16 h-16 bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Mail className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-2">
-              Be the First to Know
-            </h3>
-            <p className="text-zinc-300">
-              Join our waitlist to get notified when NeuroLint launches with
-              exclusive early access.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              onClick={onJoinWaitlist}
-              className="bg-white text-black font-bold hover:bg-gray-100 px-8 py-3"
+      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 py-8 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl w-full">
+          {/* 404 Header */}
+          <div className="mb-12 sm:mb-16 animate-fade-in-blur">
+            <h1 className="text-7xl sm:text-8xl md:text-9xl font-black text-zinc-800 mb-6 animate-slide-in-down">
+              404
+            </h1>
+            <h2
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 animate-slide-in-up"
+              style={{ animationDelay: "0.2s" }}
             >
-              <Mail className="w-4 h-4 mr-2" />
-              Join Waitlist
-            </Button>
-            <Button
-              onClick={() => (window.location.href = "/")}
-              variant="outline"
-              className="border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-600 px-8 py-3"
+              App Not Ready Yet
+            </h2>
+            <p
+              className="text-lg sm:text-xl text-zinc-300 leading-relaxed max-w-2xl mx-auto px-4 animate-slide-in-up"
+              style={{ animationDelay: "0.4s" }}
             >
-              <Home className="w-4 h-4 mr-2" />
-              Back to Home
-            </Button>
+              The NeuroLint application is currently under development. We're
+              working hard to bring you the most advanced code analysis
+              platform.
+            </p>
           </div>
-        </div>
 
-        {/* Features Teaser */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-          <div className="p-4 bg-zinc-900/30 rounded-xl border border-zinc-800">
-            <div className="flex items-center gap-2 mb-2">
-              <Database className="w-5 h-5 text-white" />
-              <h4 className="font-semibold text-white">Advanced AI Analysis</h4>
+          {/* Call to Action */}
+          <div
+            className="bg-zinc-900/60 border border-zinc-700 rounded-2xl p-6 sm:p-8 mb-12 backdrop-blur-xl transform transition-all duration-500 hover:scale-[1.02] animate-slide-in-up"
+            style={{ animationDelay: "0.6s" }}
+          >
+            <div className="mb-8">
+              <div className="w-16 h-16 bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-6 transform transition-all duration-300 hover:scale-110">
+                <Mail className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
+                Be the First to Know
+              </h3>
+              <p className="text-zinc-400 max-w-lg mx-auto leading-relaxed">
+                Join our waitlist to get notified when NeuroLint launches with
+                exclusive early access.
+              </p>
             </div>
-            <p className="text-zinc-400 text-sm">
-              6-layer code analysis using cutting-edge AI and machine learning
-            </p>
-          </div>
-          <div className="p-4 bg-zinc-900/30 rounded-xl border border-zinc-800">
-            <div className="flex items-center gap-2 mb-2">
-              <Zap className="w-5 h-5 text-white" />
-              <h4 className="font-semibold text-white">Real-time Feedback</h4>
-            </div>
-            <p className="text-zinc-400 text-sm">
-              Get instant suggestions and improvements as you code
-            </p>
-          </div>
-          <div className="p-4 bg-zinc-900/30 rounded-xl border border-zinc-800">
-            <div className="flex items-center gap-2 mb-2">
-              <Settings className="w-5 h-5 text-white" />
-              <h4 className="font-semibold text-white">Auto-fixes</h4>
-            </div>
-            <p className="text-zinc-400 text-sm">
-              Automatically apply code transformations and optimizations
-            </p>
-          </div>
-          <div className="p-4 bg-zinc-900/30 rounded-xl border border-zinc-800">
-            <div className="flex items-center gap-2 mb-2">
-              <Code className="w-5 h-5 text-white" />
-              <h4 className="font-semibold text-white">IDE Integration</h4>
-            </div>
-            <p className="text-zinc-400 text-sm">
-              Seamless integration with VS Code, CLI, and API access
-            </p>
-          </div>
-        </div>
 
-        <div className="mt-8 text-center">
-          <p className="text-zinc-500 text-sm">
-            Expected launch: Q1 2024 • Follow us for updates
-          </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+              <Button
+                onClick={onJoinWaitlist}
+                className="bg-white text-black font-semibold hover:bg-zinc-100 active:bg-zinc-200 px-6 sm:px-8 py-3 h-12 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] flex-1 sm:flex-none"
+              >
+                <Mail className="w-4 h-4 mr-2" />
+                Join Waitlist
+              </Button>
+              <Button
+                onClick={() => (window.location.href = "/")}
+                variant="outline"
+                className="border-zinc-600 text-zinc-300 hover:text-white hover:border-zinc-500 hover:bg-zinc-800/50 px-6 sm:px-8 py-3 h-12 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] flex-1 sm:flex-none"
+              >
+                <Home className="w-4 h-4 mr-2" />
+                Back to Home
+              </Button>
+            </div>
+          </div>
+
+          {/* Features Teaser */}
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left animate-slide-in-up"
+            style={{ animationDelay: "0.8s" }}
+          >
+            <div className="p-5 bg-zinc-900/40 rounded-xl border border-zinc-800 transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/60 transform hover:scale-[1.02]">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center">
+                  <Database className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="font-semibold text-white text-sm sm:text-base">
+                  Advanced AI Analysis
+                </h4>
+              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                6-layer code analysis using cutting-edge AI and machine learning
+              </p>
+            </div>
+
+            <div className="p-5 bg-zinc-900/40 rounded-xl border border-zinc-800 transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/60 transform hover:scale-[1.02]">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center">
+                  <Zap className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="font-semibold text-white text-sm sm:text-base">
+                  Real-time Feedback
+                </h4>
+              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Get instant suggestions and improvements as you code
+              </p>
+            </div>
+
+            <div className="p-5 bg-zinc-900/40 rounded-xl border border-zinc-800 transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/60 transform hover:scale-[1.02]">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center">
+                  <Settings className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="font-semibold text-white text-sm sm:text-base">
+                  Auto-fixes
+                </h4>
+              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Automatically apply code transformations and optimizations
+              </p>
+            </div>
+
+            <div className="p-5 bg-zinc-900/40 rounded-xl border border-zinc-800 transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/60 transform hover:scale-[1.02]">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center">
+                  <Code className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="font-semibold text-white text-sm sm:text-base">
+                  IDE Integration
+                </h4>
+              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Seamless integration with VS Code, CLI, and API access
+              </p>
+            </div>
+          </div>
+
+          <div
+            className="mt-12 text-center animate-slide-in-up"
+            style={{ animationDelay: "1s" }}
+          >
+            <p className="text-zinc-500 text-sm transition-opacity duration-300 hover:text-zinc-400">
+              Expected launch: Q1 2024 • Follow us for updates
+            </p>
+          </div>
         </div>
       </div>
     </div>
