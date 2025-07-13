@@ -1,6 +1,5 @@
-import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Home, Mail } from "lucide-react";
+import { Home, Mail } from "lucide-react";
 
 interface NotFoundProps {
   onJoinWaitlist?: () => void;
