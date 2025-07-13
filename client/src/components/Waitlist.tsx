@@ -145,9 +145,7 @@ export function Waitlist() {
           <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-white">
             NeuroLint is
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-              Almost Ready
-            </span>
+            Almost Ready
           </h1>
 
           <p className="text-xl md:text-2xl text-zinc-300 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -256,8 +254,8 @@ export function Waitlist() {
         {/* Features Preview */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="text-center p-6 bg-zinc-900/30 rounded-xl border border-zinc-800">
-            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-xl font-bold">🚀</span>
+            <div className="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Mail className="w-6 h-6 text-white" />
             </div>
             <h3 className="text-lg font-semibold text-white mb-2">
               Early Access
@@ -268,8 +266,8 @@ export function Waitlist() {
           </div>
 
           <div className="text-center p-6 bg-zinc-900/30 rounded-xl border border-zinc-800">
-            <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-xl font-bold">🎯</span>
+            <div className="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-4">
+              <User className="w-6 h-6 text-white" />
             </div>
             <h3 className="text-lg font-semibold text-white mb-2">
               Priority Support
@@ -280,8 +278,8 @@ export function Waitlist() {
           </div>
 
           <div className="text-center p-6 bg-zinc-900/30 rounded-xl border border-zinc-800">
-            <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-xl font-bold">💰</span>
+            <div className="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Building2 className="w-6 h-6 text-white" />
             </div>
             <h3 className="text-lg font-semibold text-white mb-2">
               Special Pricing
