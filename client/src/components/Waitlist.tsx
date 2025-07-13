@@ -300,13 +300,6 @@ export function Waitlist() {
               </form>
             </CardContent>
           </Card>
-
-          {/* Status Message */}
-          <div className="mt-12 text-center">
-            <p className="text-sm text-zinc-500 transition-opacity duration-300 hover:text-zinc-400">
-              Expected launch: Q1 2024 • Join early for exclusive benefits
-            </p>
-          </div>
         </div>
       </div>
     </div>
