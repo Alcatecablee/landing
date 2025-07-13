@@ -141,15 +141,6 @@ export function NotFound({ onJoinWaitlist }: NotFoundProps) {
               </p>
             </div>
           </div>
-
-          <div
-            className="mt-12 text-center animate-slide-in-up"
-            style={{ animationDelay: "1s" }}
-          >
-            <p className="text-zinc-500 text-sm transition-opacity duration-300 hover:text-zinc-400">
-              Expected launch: Q1 2024 • Follow us for updates
-            </p>
-          </div>
         </div>
       </div>
     </div>
