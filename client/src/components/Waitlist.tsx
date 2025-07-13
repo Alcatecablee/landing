@@ -42,8 +42,8 @@ export function Waitlist() {
     try {
       const waitlistEntry: WaitlistEntry = {
         email: formData.email,
-        name: formData.name || null,
-        company: formData.company || null,
+        name: formData.name || undefined,
+        company: formData.company || undefined,
         status: "pending",
       };
 
