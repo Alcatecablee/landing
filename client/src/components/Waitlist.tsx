@@ -150,7 +150,7 @@ export function Waitlist() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="relative overflow-hidden bg-black text-white">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
@@ -163,7 +163,7 @@ export function Waitlist() {
         ></div>
       </div>
 
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 py-8 sm:px-6 lg:px-8">
+      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 py-16 sm:px-6 lg:px-8">
         <div className="w-full max-w-2xl">
           {/* Hero Section */}
           <div className="text-center mb-12 sm:mb-16">
