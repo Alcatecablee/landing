@@ -97,54 +97,56 @@ export function Waitlist() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center px-4 py-8">
-        <Card className="w-full max-w-md bg-zinc-900/80 border-zinc-700 backdrop-blur-xl shadow-2xl animate-slide-in-up">
-          <CardHeader className="text-center pb-6">
-            <div className="mx-auto mb-4 w-16 h-16 bg-zinc-800 rounded-full flex items-center justify-center transform transition-all duration-500 hover:scale-110">
-              <CheckCircle className="w-8 h-8 text-white" />
-            </div>
-            <CardTitle className="text-2xl font-bold text-white mb-2">
-              You're on the list!
-            </CardTitle>
-            <CardDescription className="text-zinc-400">
-              We'll notify you as soon as NeuroLint is ready for you to try.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="text-center">
-              <p className="text-sm text-zinc-500 mb-4 leading-relaxed">
-                In the meantime, follow our progress and get updates:
-              </p>
-              <div className="flex flex-col gap-3">
-                <Button
-                  variant="outline"
-                  className="w-full border-zinc-600 text-zinc-300 hover:text-white hover:border-zinc-500 hover:bg-zinc-800/50 transition-all duration-300 h-11"
-                  onClick={() =>
-                    window.open("https://twitter.com/neurolint", "_blank")
-                  }
-                >
-                  Follow on Twitter
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full border-zinc-600 text-zinc-300 hover:text-white hover:border-zinc-500 hover:bg-zinc-800/50 transition-all duration-300 h-11"
-                  onClick={() =>
-                    window.open("https://github.com/neurolint", "_blank")
-                  }
-                >
-                  Star on GitHub
-                </Button>
+      <div className="relative overflow-hidden bg-black text-white">
+        <div className="flex items-center justify-center min-h-screen px-4 py-16">
+          <Card className="w-full max-w-md bg-zinc-900/80 border-zinc-700 backdrop-blur-xl shadow-2xl animate-slide-in-up">
+            <CardHeader className="text-center pb-6">
+              <div className="mx-auto mb-4 w-16 h-16 bg-zinc-800 rounded-full flex items-center justify-center transform transition-all duration-500 hover:scale-110">
+                <CheckCircle className="w-8 h-8 text-white" />
               </div>
-            </div>
-            <Button
-              onClick={() => setIsSubmitted(false)}
-              variant="ghost"
-              className="w-full text-zinc-500 hover:text-white hover:bg-zinc-800/50 transition-all duration-300 h-11"
-            >
-              Join another email
-            </Button>
-          </CardContent>
-        </Card>
+              <CardTitle className="text-2xl font-bold text-white mb-2">
+                You're on the list!
+              </CardTitle>
+              <CardDescription className="text-zinc-400">
+                We'll notify you as soon as NeuroLint is ready for you to try.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="text-center">
+                <p className="text-sm text-zinc-500 mb-4 leading-relaxed">
+                  In the meantime, follow our progress and get updates:
+                </p>
+                <div className="flex flex-col gap-3">
+                  <Button
+                    variant="outline"
+                    className="w-full border-zinc-600 text-zinc-300 hover:text-white hover:border-zinc-500 hover:bg-zinc-800/50 transition-all duration-300 h-11"
+                    onClick={() =>
+                      window.open("https://twitter.com/neurolint", "_blank")
+                    }
+                  >
+                    Follow on Twitter
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="w-full border-zinc-600 text-zinc-300 hover:text-white hover:border-zinc-500 hover:bg-zinc-800/50 transition-all duration-300 h-11"
+                    onClick={() =>
+                      window.open("https://github.com/neurolint", "_blank")
+                    }
+                  >
+                    Star on GitHub
+                  </Button>
+                </div>
+              </div>
+              <Button
+                onClick={() => setIsSubmitted(false)}
+                variant="ghost"
+                className="w-full text-zinc-500 hover:text-white hover:bg-zinc-800/50 transition-all duration-300 h-11"
+              >
+                Join another email
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     );
   }
