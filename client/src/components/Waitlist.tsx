@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { supabase, WaitlistEntry } from "@/lib/supabase";
+import { supabase, WaitlistEntry, isSupabaseConfigured } from "@/lib/supabase";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -34,6 +34,15 @@ export function Waitlist() {
 
     if (!formData.email) {
       toast.error("Please enter your email address");
+      return;
+    }
+
+    // Check if Supabase is properly configured
+    if (!isSupabaseConfigured()) {
+      toast.error("Waitlist is not configured yet. Please check back later!");
+      console.error(
+        "Supabase environment variables are not configured. Please set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY",
+      );
       return;
     }
 
