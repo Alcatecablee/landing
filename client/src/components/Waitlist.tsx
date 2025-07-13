@@ -200,6 +200,14 @@ export function Waitlist() {
             style={{ animationDelay: "0.6s" }}
           >
             <CardHeader className="text-center pb-6">
+              <div className="mx-auto mb-4 w-16 h-16 bg-zinc-800/50 rounded-2xl flex items-center justify-center border border-zinc-700">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F52b46fbc49c34422a0037fa4f335b74e%2Fbb939da26bfc4cc796ee9f5b0cc88eec?format=webp&width=800"
+                  alt="NeuroLint Logo"
+                  className="w-10 h-10 object-contain"
+                  loading="eager"
+                />
+              </div>
               <CardTitle className="text-xl sm:text-2xl font-bold text-white mb-2">
                 Join the Waitlist
               </CardTitle>
