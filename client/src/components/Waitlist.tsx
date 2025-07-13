@@ -124,7 +124,7 @@ export function Waitlist() {
                       window.open("https://x.com/neurolint", "_blank")
                     }
                   >
-                    Follow on Twitter
+                    Follow on X
                   </Button>
                   <Button
                     variant="outline"
