@@ -115,18 +115,18 @@ export const SiteHeader = ({ onJoinWaitlist }: SiteHeaderProps) => {
                   isApp: true,
                 },
                 {
-                  href: "https://app.neurolint.dev",
-                  label: "Dashboard",
-                  isApp: true,
-                },
-                {
-                  href: "https://docs.neurolint.dev",
-                  label: "Docs",
+                  href: "https://cli.neurolint.dev",
+                  label: "CLI",
                   isApp: false,
                 },
                 {
-                  href: "https://forum.neurolint.dev",
-                  label: "Forum",
+                  href: "https://vs.neurolint.dev",
+                  label: "VS",
+                  isApp: false,
+                },
+                {
+                  href: "mailto:founder@neurolint.dev",
+                  label: "Contact",
                   isApp: false,
                 },
               ].map((item, index) =>
@@ -252,18 +252,18 @@ export const SiteHeader = ({ onJoinWaitlist }: SiteHeaderProps) => {
                     isApp: true,
                   },
                   {
-                    href: "https://app.neurolint.dev",
-                    label: "Dashboard",
-                    isApp: true,
-                  },
-                  {
-                    href: "https://docs.neurolint.dev",
-                    label: "Docs",
+                    href: "https://cli.neurolint.dev",
+                    label: "CLI",
                     isApp: false,
                   },
                   {
-                    href: "https://forum.neurolint.dev",
-                    label: "Forum",
+                    href: "https://vs.neurolint.dev",
+                    label: "VS",
+                    isApp: false,
+                  },
+                  {
+                    href: "mailto:founder@neurolint.dev",
+                    label: "Contact",
                     isApp: false,
                   },
                 ].map((item, index) =>
