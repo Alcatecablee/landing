@@ -105,7 +105,11 @@ const TypewriterHeadline: React.FC = () => {
   );
 };
 
-export default function Index() {
+interface IndexProps {
+  onJoinWaitlist?: () => void;
+}
+
+export default function Index({ onJoinWaitlist }: IndexProps) {
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
@@ -164,13 +168,11 @@ export default function Index() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 md:gap-8 justify-center animate-slide-in-up animate-delay-700">
-            <a
-              href="https://app.neurolint.dev"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => onJoinWaitlist?.()}
               className="group relative px-8 md:px-10 py-4 md:py-5 bg-white text-black font-black rounded-xl md:rounded-2xl hover:bg-gray-100 active:bg-gray-200 transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) flex items-center justify-center gap-3 text-lg md:text-xl shadow-2xl hover:shadow-white/30 hover:scale-105 active:scale-95 focus:scale-105 focus:outline-none focus:ring-4 focus:ring-white/30 focus:ring-offset-4 focus:ring-offset-black touch-manipulation"
             >
-              Start Analyzing
+              Join Waitlist
               <svg
                 className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 group-focus:translate-x-1 transition-transform duration-300"
                 fill="none"
@@ -184,7 +186,7 @@ export default function Index() {
                   d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
               </svg>
-            </a>
+            </button>
 
             <a
               href="#features"
@@ -219,15 +221,13 @@ export default function Index() {
             Try our interactive test suite to see how NeuroLint transforms your
             code
           </p>
-          <a
-            href="https://app.neurolint.dev"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => onJoinWaitlist?.()}
             className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl"
           >
             <Play className="w-6 h-6" />
-            Try Test Suite
-          </a>
+            Join Waitlist
+          </button>
         </div>
       </section>
 
@@ -660,15 +660,12 @@ export default function Index() {
                   View Full Documentation
                 </button>
               </a>
-              <a
-                href="https://app.neurolint.dev/contact"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => onJoinWaitlist?.()}
+                className="border-2 border-zinc-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:border-zinc-600 transition-all duration-300"
               >
-                <button className="border-2 border-zinc-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:border-zinc-600 transition-all duration-300">
-                  Request Enterprise Demo
-                </button>
-              </a>
+                Request Enterprise Demo
+              </button>
             </div>
           </div>
         </div>
@@ -753,22 +750,18 @@ export default function Index() {
               transformation platform
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <a
-                href="https://app.neurolint.dev"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => onJoinWaitlist?.()}
                 className="px-10 py-5 bg-white text-black font-black rounded-2xl hover:bg-gray-100 transition-all duration-300 text-lg shadow-2xl hover:scale-105"
               >
-                Start Free Trial
-              </a>
-              <a
-                href="https://app.neurolint.dev"
-                target="_blank"
-                rel="noopener noreferrer"
+                Join Waitlist
+              </button>
+              <button
+                onClick={() => onJoinWaitlist?.()}
                 className="px-10 py-5 bg-black/50 text-white font-black rounded-2xl border-2 border-zinc-800 hover:bg-black hover:border-zinc-600 transition-all duration-300 text-lg backdrop-blur-xl hover:scale-105"
               >
-                View Pricing
-              </a>
+                Get Early Access
+              </button>
             </div>
           </div>
         </div>
