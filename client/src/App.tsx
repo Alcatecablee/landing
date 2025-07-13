@@ -37,7 +37,14 @@ const App = () => {
   const renderContent = () => {
     switch (currentView) {
       case "waitlist":
-        return <Waitlist />;
+        return (
+          <div className="min-h-screen bg-black text-white">
+            <SiteHeader onJoinWaitlist={handleJoinWaitlist} />
+            <main id="main-content" className="relative">
+              <Waitlist />
+            </main>
+          </div>
+        );
       case "404":
         return <NotFound onJoinWaitlist={handleJoinWaitlist} />;
       default:
