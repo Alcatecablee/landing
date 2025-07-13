@@ -133,6 +133,36 @@ For better database management and automation, consider connecting the **Neon MC
 2. Connect to Neon for advanced database management
 3. This will give you enhanced database querying and management capabilities
 
+## Troubleshooting
+
+### Common Errors
+
+**"Waitlist is not configured yet"**
+
+- Check that `.env` or `.env.local` exists in the `client/` folder
+- Verify environment variables are set correctly
+- Restart the dev server after changing environment variables
+
+**"[object Object]" errors**
+
+- Now fixed with detailed error logging
+- Check browser console for specific error details
+- Usually indicates Supabase configuration or table setup issues
+
+**Network errors**
+
+- Check internet connection
+- Verify Supabase project is active
+- Check browser network tab for failed requests
+
+### Debug Mode
+
+Open browser console to see detailed error information:
+
+- Configuration warnings on app start
+- Detailed Supabase error messages
+- Network error details
+
 ## Next Steps
 
 1. **Set up Supabase** following the instructions above
@@ -141,4 +171,4 @@ For better database management and automation, consider connecting the **Neon MC
 4. **Monitor entries** in Supabase dashboard
 5. **Set up email notifications** (optional)
 
-The waitlist is now fully functional and will capture all users trying to access the NeuroLint app!
+The waitlist is now fully functional with comprehensive error handling and debugging!
