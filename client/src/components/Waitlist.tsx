@@ -101,8 +101,13 @@ export function Waitlist() {
         <div className="flex items-center justify-center min-h-screen px-4 py-16">
           <Card className="w-full max-w-md bg-zinc-900/80 border-zinc-700 backdrop-blur-xl shadow-2xl animate-slide-in-up">
             <CardHeader className="text-center pb-6">
-              <div className="mx-auto mb-4 w-16 h-16 bg-zinc-800 rounded-full flex items-center justify-center transform transition-all duration-500 hover:scale-110">
-                <CheckCircle className="w-8 h-8 text-white" />
+              <div className="mx-auto mb-4 w-20 h-20 bg-zinc-800/50 rounded-2xl flex items-center justify-center transform transition-all duration-500 hover:scale-110 border border-zinc-700">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F52b46fbc49c34422a0037fa4f335b74e%2Fbb939da26bfc4cc796ee9f5b0cc88eec?format=webp&width=800"
+                  alt="NeuroLint Logo"
+                  className="w-12 h-12 object-contain"
+                  loading="eager"
+                />
               </div>
               <CardTitle className="text-2xl font-bold text-white mb-2">
                 You're on the list!
@@ -125,15 +130,6 @@ export function Waitlist() {
                     }
                   >
                     Follow on X
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="w-full border-zinc-600 text-zinc-300 hover:text-white hover:border-zinc-500 hover:bg-zinc-800/50 transition-all duration-300 h-11"
-                    onClick={() =>
-                      window.open("https://github.com/neurolint", "_blank")
-                    }
-                  >
-                    Star on GitHub
                   </Button>
                 </div>
               </div>
