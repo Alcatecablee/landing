@@ -269,43 +269,11 @@ export function Waitlist() {
           </CardContent>
         </Card>
 
-        {/* Features Preview */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="text-center p-6 bg-zinc-900/30 rounded-xl border border-zinc-800">
-            <div className="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Mail className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="text-lg font-semibold text-white mb-2">
-              Early Access
-            </h3>
-            <p className="text-zinc-400 text-sm">
-              Get exclusive early access to NeuroLint before the public launch
-            </p>
-          </div>
-
-          <div className="text-center p-6 bg-zinc-900/30 rounded-xl border border-zinc-800">
-            <div className="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-4">
-              <User className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="text-lg font-semibold text-white mb-2">
-              Priority Support
-            </h3>
-            <p className="text-zinc-400 text-sm">
-              Receive priority customer support and direct feedback channels
-            </p>
-          </div>
-
-          <div className="text-center p-6 bg-zinc-900/30 rounded-xl border border-zinc-800">
-            <div className="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Building2 className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="text-lg font-semibold text-white mb-2">
-              Special Pricing
-            </h3>
-            <p className="text-zinc-400 text-sm">
-              Lock in special launch pricing for early adopters
-            </p>
-          </div>
+        {/* Status Message */}
+        <div className="mt-12 text-center">
+          <p className="text-sm text-zinc-500 transition-opacity duration-300 hover:text-zinc-400">
+            Expected launch: Q1 2024 • Join early for exclusive benefits
+          </p>
         </div>
       </div>
     </div>
