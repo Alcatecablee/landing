@@ -121,7 +121,7 @@ export function Waitlist() {
                     variant="outline"
                     className="w-full border-zinc-600 text-zinc-300 hover:text-white hover:border-zinc-500 hover:bg-zinc-800/50 transition-all duration-300 h-11"
                     onClick={() =>
-                      window.open("https://twitter.com/neurolint", "_blank")
+                      window.open("https://x.com/neurolint", "_blank")
                     }
                   >
                     Follow on Twitter
