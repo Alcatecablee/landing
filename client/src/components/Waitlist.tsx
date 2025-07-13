@@ -50,8 +50,17 @@ export function Waitlist() {
       const { error } = await supabase.from("waitlist").insert([waitlistEntry]);
 
       if (error) {
-        console.error("Supabase error:", error);
-        toast.error("Something went wrong. Please try again.");
+        console.error("Supabase error details:", {
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+          code: error.code,
+        });
+
+        // Show specific error message to user
+        const errorMessage =
+          error.message || "Something went wrong. Please try again.";
+        toast.error(errorMessage);
         return;
       }
 
@@ -61,8 +70,8 @@ export function Waitlist() {
       // Reset form
       setFormData({ email: "", name: "", company: "" });
     } catch (error) {
-      console.error("Error submitting to waitlist:", error);
-      toast.error("Failed to join waitlist. Please try again.");
+      console.error("Network or unexpected error:", error);
+      toast.error("Network error. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }
