@@ -251,19 +251,21 @@ export const SiteHeader = () => {
               <nav className="px-4 py-6 space-y-1" role="navigation">
                 {[
                   {
-                    href: "https://app.neurolint.dev",
+                    href: "https://app.neurolint.dev/dashboard",
                     label: "App",
                     isApp: false,
                   },
                   {
-                    href: "https://cli.neurolint.dev",
+                    href: "#",
                     label: "CLI",
                     isApp: false,
+                    comingSoon: true,
                   },
                   {
-                    href: "https://vs.neurolint.dev",
+                    href: "#",
                     label: "VS",
                     isApp: false,
+                    comingSoon: true,
                   },
                   {
                     href: "mailto:founder@neurolint.dev",
