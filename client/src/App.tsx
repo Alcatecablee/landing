@@ -4,15 +4,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "next-themes";
 import { useState, useEffect } from "react";
 import Index from "./pages/Index";
-import { Waitlist } from "./components/Waitlist";
 import { NotFound } from "./components/NotFound";
 import { SiteHeader } from "./components/SiteHeader";
 import { SiteFooter } from "./components/SiteFooter";
 
 const App = () => {
-  const [currentView, setCurrentView] = useState<
-    "landing" | "waitlist" | "404"
-  >("landing");
+  const [currentView, setCurrentView] = useState<"landing" | "404">("landing");
 
   useEffect(() => {
     // Check if user came from app.neurolint.dev or any direct app link
@@ -30,29 +27,16 @@ const App = () => {
     }
   }, []);
 
-  const handleJoinWaitlist = () => {
-    setCurrentView("waitlist");
-  };
-
   const renderContent = () => {
     switch (currentView) {
-      case "waitlist":
-        return (
-          <div className="min-h-screen bg-black text-white">
-            <SiteHeader onJoinWaitlist={handleJoinWaitlist} />
-            <main id="main-content" className="relative">
-              <Waitlist />
-            </main>
-          </div>
-        );
       case "404":
-        return <NotFound onJoinWaitlist={handleJoinWaitlist} />;
+        return <NotFound />;
       default:
         return (
           <div className="min-h-screen bg-black text-white">
-            <SiteHeader onJoinWaitlist={handleJoinWaitlist} />
+            <SiteHeader />
             <main id="main-content" className="relative">
-              <Index onJoinWaitlist={handleJoinWaitlist} />
+              <Index />
             </main>
             <SiteFooter />
           </div>
