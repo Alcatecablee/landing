@@ -272,30 +272,48 @@ export const SiteHeader = () => {
                     label: "Contact",
                     isApp: false,
                   },
-                ].map((item, index) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-6 py-4 text-lg font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) transform hover:translate-x-2 focus:translate-x-2 active:scale-98 active:bg-zinc-800/80 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 focus:ring-offset-black min-h-[56px] flex items-center touch-manipulation -webkit-tap-highlight-color-transparent"
-                    onClick={() => setIsMenuOpen(false)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        setIsMenuOpen(false);
-                      }
-                    }}
-                    style={{
-                      animationDelay: `${index * 100}ms`,
-                      animation: isMenuOpen
-                        ? `slideInLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) ${index * 100}ms forwards`
-                        : "none",
-                    }}
-                  >
-                    {item.label}
-                  </a>
-                ))}
+                ].map((item, index) =>
+                  item.comingSoon ? (
+                    <span
+                      key={item.label}
+                      className="block px-6 py-4 text-lg font-medium text-zinc-500 cursor-not-allowed rounded-lg min-h-[56px] flex items-center justify-between touch-manipulation"
+                      style={{
+                        animationDelay: `${index * 100}ms`,
+                        animation: isMenuOpen
+                          ? `slideInLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) ${index * 100}ms forwards`
+                          : "none",
+                      }}
+                    >
+                      {item.label}
+                      <span className="bg-zinc-700 text-zinc-300 text-xs px-2 py-1 rounded">
+                        Coming Soon
+                      </span>
+                    </span>
+                  ) : (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block px-6 py-4 text-lg font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) transform hover:translate-x-2 focus:translate-x-2 active:scale-98 active:bg-zinc-800/80 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 focus:ring-offset-black min-h-[56px] flex items-center touch-manipulation -webkit-tap-highlight-color-transparent"
+                      onClick={() => setIsMenuOpen(false)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setIsMenuOpen(false);
+                        }
+                      }}
+                      style={{
+                        animationDelay: `${index * 100}ms`,
+                        animation: isMenuOpen
+                          ? `slideInLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) ${index * 100}ms forwards`
+                          : "none",
+                      }}
+                    >
+                      {item.label}
+                    </a>
+                  ),
+                )}
 
                 {/* Auth Section in Mobile Menu */}
                 <div className="border-t border-zinc-800/50 mt-4 pt-4 px-4 space-y-3">
