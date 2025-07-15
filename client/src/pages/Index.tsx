@@ -400,28 +400,22 @@ export default function Index() {
             <div className="space-y-8">
               <div className="space-y-6">
                 <h3 className="text-2xl font-semibold text-white">
-                  Install from Marketplace
+                  Extension Coming Soon
                 </h3>
                 <div className="flex gap-4">
-                  <a
-                    href="https://vs.neurolint.dev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors flex items-center gap-2"
-                  >
+                  <span className="bg-zinc-700 text-zinc-300 px-6 py-3 rounded-lg font-medium cursor-not-allowed flex items-center gap-2">
                     <Download className="w-5 h-5" />
                     Install Extension
-                  </a>
-                  <a
-                    href="https://vs.neurolint.dev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="border border-zinc-800 text-white px-6 py-3 rounded-lg font-medium hover:border-white transition-colors flex items-center gap-2"
-                  >
+                  </span>
+                  <span className="border border-zinc-700 text-zinc-500 px-6 py-3 rounded-lg font-medium cursor-not-allowed flex items-center gap-2">
                     <ExternalLink className="w-4 h-4" />
                     View on Marketplace
-                  </a>
+                  </span>
                 </div>
+                <p className="text-zinc-400 text-sm">
+                  The VS Code extension is currently in development. Sign up to
+                  be notified when it's available.
+                </p>
               </div>
 
               <div className="space-y-4">
