@@ -59,7 +59,7 @@ export function NotFound() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <Button
                 onClick={() =>
-                  window.open("https://app.neurolint.dev", "_blank")
+                  window.open("https://app.neurolint.dev/dashboard", "_blank")
                 }
                 className="bg-white text-black font-semibold hover:bg-zinc-100 active:bg-zinc-200 px-6 sm:px-8 py-3 h-12 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] flex-1 sm:flex-none"
               >
