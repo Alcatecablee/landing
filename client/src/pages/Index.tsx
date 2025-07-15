@@ -165,7 +165,7 @@ export default function Index() {
 
           <div className="flex flex-col sm:flex-row gap-6 md:gap-8 justify-center animate-slide-in-up animate-delay-700">
             <a
-              href="https://app.neurolint.dev"
+              href="https://app.neurolint.dev/dashboard"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative px-8 md:px-10 py-4 md:py-5 bg-white text-black font-black rounded-xl md:rounded-2xl hover:bg-gray-100 active:bg-gray-200 transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) flex items-center justify-center gap-3 text-lg md:text-xl shadow-2xl hover:shadow-white/30 hover:scale-105 active:scale-95 focus:scale-105 focus:outline-none focus:ring-4 focus:ring-white/30 focus:ring-offset-4 focus:ring-offset-black touch-manipulation"
@@ -661,7 +661,7 @@ export default function Index() {
                 </button>
               </a>
               <a
-                href="https://app.neurolint.dev"
+                href="https://app.neurolint.dev/dashboard"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border-2 border-zinc-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:border-zinc-600 transition-all duration-300"
@@ -753,7 +753,7 @@ export default function Index() {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
-                href="https://app.neurolint.dev"
+                href="https://app.neurolint.dev/dashboard"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-10 py-5 bg-white text-black font-black rounded-2xl hover:bg-gray-100 transition-all duration-300 text-lg shadow-2xl hover:scale-105"
