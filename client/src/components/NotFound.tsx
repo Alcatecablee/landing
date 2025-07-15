@@ -1,11 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Home, Mail, Zap, Settings, Code, Database } from "lucide-react";
 
-interface NotFoundProps {
-  onJoinWaitlist?: () => void;
-}
-
-export function NotFound({ onJoinWaitlist }: NotFoundProps) {
+export function NotFound() {
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Background Elements */}
@@ -31,15 +27,14 @@ export function NotFound({ onJoinWaitlist }: NotFoundProps) {
               className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 animate-slide-in-up"
               style={{ animationDelay: "0.2s" }}
             >
-              App Not Ready Yet
+              Looking for the App?
             </h2>
             <p
               className="text-lg sm:text-xl text-zinc-300 leading-relaxed max-w-2xl mx-auto px-4 animate-slide-in-up"
               style={{ animationDelay: "0.4s" }}
             >
-              The NeuroLint application is currently under development. We're
-              working hard to bring you the most advanced code analysis
-              platform.
+              The NeuroLint application is available at app.neurolint.dev. Get
+              started with our advanced code analysis platform.
             </p>
           </div>
 
@@ -53,21 +48,23 @@ export function NotFound({ onJoinWaitlist }: NotFoundProps) {
                 <Mail className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
-                Be the First to Know
+                Ready to Get Started?
               </h3>
               <p className="text-zinc-400 max-w-lg mx-auto leading-relaxed">
-                Join our waitlist to get notified when NeuroLint launches with
-                exclusive early access.
+                Access NeuroLint's powerful code analysis tools and start
+                improving your code today.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <Button
-                onClick={onJoinWaitlist}
+                onClick={() =>
+                  window.open("https://app.neurolint.dev", "_blank")
+                }
                 className="bg-white text-black font-semibold hover:bg-zinc-100 active:bg-zinc-200 px-6 sm:px-8 py-3 h-12 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] flex-1 sm:flex-none"
               >
-                <Mail className="w-4 h-4 mr-2" />
-                Join Waitlist
+                <Zap className="w-4 h-4 mr-2" />
+                Go to App
               </Button>
               <Button
                 onClick={() => (window.location.href = "/")}
