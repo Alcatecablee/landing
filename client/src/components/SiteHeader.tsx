@@ -106,48 +106,68 @@ export const SiteHeader = () => {
             >
               {[
                 {
-                  href: "https://app.neurolint.dev",
+                  href: "https://app.neurolint.dev/dashboard",
                   label: "App",
                   isApp: false,
                 },
                 {
-                  href: "https://cli.neurolint.dev",
+                  href: "#",
                   label: "CLI",
                   isApp: false,
+                  comingSoon: true,
                 },
                 {
-                  href: "https://vs.neurolint.dev",
+                  href: "#",
                   label: "VS",
                   isApp: false,
+                  comingSoon: true,
                 },
                 {
                   href: "mailto:founder@neurolint.dev",
                   label: "Contact",
                   isApp: false,
                 },
-              ].map((item, index) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) transform hover:scale-105 hover:-translate-y-0.5 focus:scale-105 focus:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-zinc-500/50 focus:ring-offset-2 focus:ring-offset-black relative touch-manipulation will-change-transform"
-                  style={{
-                    animationDelay: `${index * 75}ms`,
-                    animation: isScrolled
-                      ? "slideInDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards"
-                      : "none",
-                  }}
-                >
-                  {item.label}
-                </a>
-              ))}
+              ].map((item, index) =>
+                item.comingSoon ? (
+                  <span
+                    key={item.label}
+                    className="px-4 py-2 text-sm font-medium text-zinc-500 cursor-not-allowed rounded-lg relative"
+                    style={{
+                      animationDelay: `${index * 75}ms`,
+                      animation: isScrolled
+                        ? "slideInDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards"
+                        : "none",
+                    }}
+                  >
+                    {item.label}
+                    <span className="absolute -top-1 -right-1 bg-zinc-700 text-zinc-300 text-xs px-1 py-0.5 rounded text-[10px]">
+                      soon
+                    </span>
+                  </span>
+                ) : (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) transform hover:scale-105 hover:-translate-y-0.5 focus:scale-105 focus:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-zinc-500/50 focus:ring-offset-2 focus:ring-offset-black relative touch-manipulation will-change-transform"
+                    style={{
+                      animationDelay: `${index * 75}ms`,
+                      animation: isScrolled
+                        ? "slideInDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards"
+                        : "none",
+                    }}
+                  >
+                    {item.label}
+                  </a>
+                ),
+              )}
             </nav>
 
             {/* Login/Get Started Buttons */}
             <div className="flex items-center space-x-3">
               <a
-                href="https://app.neurolint.dev"
+                href="https://app.neurolint.dev/login"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden md:inline-flex px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-500 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-zinc-500/50 focus:ring-offset-2 focus:ring-offset-black"
@@ -155,7 +175,7 @@ export const SiteHeader = () => {
                 Log In
               </a>
               <a
-                href="https://app.neurolint.dev"
+                href="https://app.neurolint.dev/dashboard"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-white text-black font-semibold rounded-lg hover:bg-zinc-100 active:bg-zinc-200 transition-all duration-500 text-sm transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 focus:ring-offset-black shadow-lg hover:shadow-xl"
