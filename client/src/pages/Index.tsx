@@ -105,11 +105,7 @@ const TypewriterHeadline: React.FC = () => {
   );
 };
 
-interface IndexProps {
-  onJoinWaitlist?: () => void;
-}
-
-export default function Index({ onJoinWaitlist }: IndexProps) {
+export default function Index() {
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
@@ -168,11 +164,13 @@ export default function Index({ onJoinWaitlist }: IndexProps) {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 md:gap-8 justify-center animate-slide-in-up animate-delay-700">
-            <button
-              onClick={() => onJoinWaitlist?.()}
+            <a
+              href="https://app.neurolint.dev"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative px-8 md:px-10 py-4 md:py-5 bg-white text-black font-black rounded-xl md:rounded-2xl hover:bg-gray-100 active:bg-gray-200 transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) flex items-center justify-center gap-3 text-lg md:text-xl shadow-2xl hover:shadow-white/30 hover:scale-105 active:scale-95 focus:scale-105 focus:outline-none focus:ring-4 focus:ring-white/30 focus:ring-offset-4 focus:ring-offset-black touch-manipulation"
             >
-              Join Waitlist
+              Get Started
               <svg
                 className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 group-focus:translate-x-1 transition-transform duration-300"
                 fill="none"
@@ -186,7 +184,7 @@ export default function Index({ onJoinWaitlist }: IndexProps) {
                   d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
               </svg>
-            </button>
+            </a>
 
             <a
               href="#features"
@@ -221,13 +219,15 @@ export default function Index({ onJoinWaitlist }: IndexProps) {
             Try our interactive test suite to see how NeuroLint transforms your
             code
           </p>
-          <button
-            onClick={() => onJoinWaitlist?.()}
+          <a
+            href="https://app.neurolint.dev"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl"
           >
             <Play className="w-6 h-6" />
-            Join Waitlist
-          </button>
+            Try NeuroLint
+          </a>
         </div>
       </section>
 
@@ -660,12 +660,14 @@ export default function Index({ onJoinWaitlist }: IndexProps) {
                   View Full Documentation
                 </button>
               </a>
-              <button
-                onClick={() => onJoinWaitlist?.()}
+              <a
+                href="https://app.neurolint.dev"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="border-2 border-zinc-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:border-zinc-600 transition-all duration-300"
               >
                 Request Enterprise Demo
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -750,18 +752,22 @@ export default function Index({ onJoinWaitlist }: IndexProps) {
               transformation platform
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button
-                onClick={() => onJoinWaitlist?.()}
+              <a
+                href="https://app.neurolint.dev"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-10 py-5 bg-white text-black font-black rounded-2xl hover:bg-gray-100 transition-all duration-300 text-lg shadow-2xl hover:scale-105"
               >
-                Join Waitlist
-              </button>
-              <button
-                onClick={() => onJoinWaitlist?.()}
+                Get Started
+              </a>
+              <a
+                href="https://app.neurolint.dev"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-10 py-5 bg-black/50 text-white font-black rounded-2xl border-2 border-zinc-800 hover:bg-black hover:border-zinc-600 transition-all duration-300 text-lg backdrop-blur-xl hover:scale-105"
               >
-                Get Early Access
-              </button>
+                Try Now
+              </a>
             </div>
           </div>
         </div>
