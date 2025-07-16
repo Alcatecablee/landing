@@ -9,19 +9,7 @@ import {
   BarChart3,
   Atom,
   CheckCircle,
-  Shield,
-  Terminal,
-  Code,
-  Database,
-  Users,
-  Settings,
-  Monitor,
-  Cpu,
-  GitBranch,
-  Download,
   Play,
-  Copy,
-  ExternalLink,
 } from "lucide-react";
 
 // Lazy Loading Hook
