@@ -104,7 +104,13 @@ export const SiteHeader = () => {
               role="navigation"
               aria-label="Main navigation"
             >
-              {[].map((item, index) =>
+              {[
+                {
+                  label: "Pricing",
+                  href: "https://app.neurolint.dev/pricing",
+                  comingSoon: false,
+                },
+              ].map((item, index) =>
                 item.comingSoon ? (
                   <span
                     key={item.label}
