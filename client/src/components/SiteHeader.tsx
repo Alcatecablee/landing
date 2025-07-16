@@ -111,18 +111,6 @@ export const SiteHeader = () => {
                   isApp: false,
                 },
                 {
-                  href: "#",
-                  label: "CLI",
-                  isApp: false,
-                  comingSoon: true,
-                },
-                {
-                  href: "#",
-                  label: "VS",
-                  isApp: false,
-                  comingSoon: true,
-                },
-                {
                   href: "mailto:founder@neurolint.dev",
                   label: "Contact",
                   isApp: false,
@@ -254,18 +242,6 @@ export const SiteHeader = () => {
                     href: "https://app.neurolint.dev/dashboard",
                     label: "App",
                     isApp: false,
-                  },
-                  {
-                    href: "#",
-                    label: "CLI",
-                    isApp: false,
-                    comingSoon: true,
-                  },
-                  {
-                    href: "#",
-                    label: "VS",
-                    isApp: false,
-                    comingSoon: true,
                   },
                   {
                     href: "mailto:founder@neurolint.dev",
