@@ -209,7 +209,7 @@ export default function Index() {
             href="https://app.neurolint.dev"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl mt-8"
+            className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl mt-16"
           >
             <Play className="w-6 h-6" />
             Try NeuroLint
