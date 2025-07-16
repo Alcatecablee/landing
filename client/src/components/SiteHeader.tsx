@@ -147,8 +147,16 @@ export const SiteHeader = () => {
               )}
             </nav>
 
-            {/* Get Started Button */}
-            <div className="flex items-center">
+            {/* Pricing and Get Started Buttons */}
+            <div className="flex items-center space-x-3">
+              <a
+                href="https://app.neurolint.dev/pricing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden md:inline-flex px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-500 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-zinc-500/50 focus:ring-offset-2 focus:ring-offset-black"
+              >
+                Pricing
+              </a>
               <a
                 href="https://app.neurolint.dev/dashboard"
                 target="_blank"
