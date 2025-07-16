@@ -231,6 +231,11 @@ export const SiteHeader = () => {
               <nav className="px-4 py-6 space-y-1" role="navigation">
                 {[
                   {
+                    label: "Demo",
+                    href: "https://app.neurolint.dev/",
+                    comingSoon: false,
+                  },
+                  {
                     label: "Pricing",
                     href: "https://app.neurolint.dev/pricing",
                     comingSoon: false,
