@@ -379,67 +379,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Integrations Section */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-white">
-              Seamless Integrations
-            </h2>
-            <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
-              Connect NeuroLint with your existing development tools and
-              workflows
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="p-6 bg-zinc-900/50 border border-zinc-800 rounded-xl hover:border-white transition-colors">
-              <div className="w-12 h-12 bg-zinc-900 rounded-lg flex items-center justify-center mb-4">
-                <GitBranch className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                GitHub Actions
-              </h3>
-              <p className="text-zinc-400 text-sm">
-                Automated code analysis on every pull request
-              </p>
-            </div>
-
-            <div className="p-6 bg-zinc-900/50 border border-zinc-800 rounded-xl hover:border-white transition-colors">
-              <div className="w-12 h-12 bg-zinc-900 rounded-lg flex items-center justify-center mb-4">
-                <Settings className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Jenkins</h3>
-              <p className="text-zinc-400 text-sm">
-                Integrate with your CI/CD pipeline
-              </p>
-            </div>
-
-            <div className="p-6 bg-zinc-900/50 border border-zinc-800 rounded-xl hover:border-white transition-colors">
-              <div className="w-12 h-12 bg-zinc-900 rounded-lg flex items-center justify-center mb-4">
-                <Users className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Slack</h3>
-              <p className="text-zinc-400 text-sm">
-                Get notifications in your team channels
-              </p>
-            </div>
-
-            <div className="p-6 bg-zinc-900/50 border border-zinc-800 rounded-xl hover:border-white transition-colors">
-              <div className="w-12 h-12 bg-zinc-900 rounded-lg flex items-center justify-center mb-4">
-                <Code className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Webhooks
-              </h3>
-              <p className="text-zinc-400 text-sm">
-                Custom integrations with any platform
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Technology Section */}
       <TechnologySection />
 
