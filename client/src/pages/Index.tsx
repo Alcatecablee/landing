@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import { FAQSection } from "@/components/landing/FAQSection";
-import { TechnologySection } from "@/components/landing/TechnologySection";
 
 import {
   Target,
