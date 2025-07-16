@@ -273,17 +273,8 @@ export const SiteHeader = () => {
                   ),
                 )}
 
-                {/* Auth Section in Mobile Menu */}
-                <div className="border-t border-zinc-800/50 mt-4 pt-4 px-4 space-y-3">
-                  <a
-                    href="https://app.neurolint.dev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block w-full px-6 py-3 text-center text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-300"
-                  >
-                    Log In
-                  </a>
+                {/* Get Started Section in Mobile Menu */}
+                <div className="border-t border-zinc-800/50 mt-4 pt-4 px-4">
                   <a
                     href="https://app.neurolint.dev"
                     target="_blank"
