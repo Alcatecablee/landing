@@ -234,13 +234,7 @@ export const SiteHeader = () => {
               aria-hidden={!isMenuOpen}
             >
               <nav className="px-4 py-6 space-y-1" role="navigation">
-                {[
-                  {
-                    label: "Demo",
-                    href: "https://app.neurolint.dev/",
-                    comingSoon: false,
-                  },
-                ].map((item, index) =>
+                {[].map((item, index) =>
                   item.comingSoon ? (
                     <span
                       key={item.label}
