@@ -196,12 +196,12 @@ export default function Index() {
       </section>
 
       {/* Test Suite CTA Section */}
-      <section className="py-24 px-4">
-        <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center min-h-[60vh]">
-          <h2 className="text-5xl md:text-7xl font-black mb-12 tracking-tight text-white">
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-white">
             See NeuroLint in Action
           </h2>
-          <p className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
             Try our interactive test suite to see how NeuroLint transforms your
             code
           </p>
@@ -209,7 +209,7 @@ export default function Index() {
             href="https://app.neurolint.dev"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl"
+            className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl mt-8"
           >
             <Play className="w-6 h-6" />
             Try NeuroLint
