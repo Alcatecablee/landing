@@ -110,11 +110,6 @@ export const SiteHeader = () => {
                   href: "https://app.neurolint.dev/",
                   comingSoon: false,
                 },
-                {
-                  label: "Pricing",
-                  href: "https://app.neurolint.dev/pricing",
-                  comingSoon: false,
-                },
               ].map((item, index) =>
                 item.comingSoon ? (
                   <span
