@@ -173,7 +173,9 @@ export default function Index() {
             </a>
 
             <a
-              href="#features"
+              href="https://app.neurolint.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative px-8 md:px-10 py-4 md:py-5 bg-black/60 text-white font-black rounded-xl md:rounded-2xl border-2 border-zinc-800 hover:bg-black/80 hover:border-zinc-600 active:bg-black/90 transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) flex items-center justify-center gap-3 text-lg md:text-xl backdrop-blur-xl hover:scale-105 active:scale-95 focus:scale-105 focus:outline-none focus:ring-4 focus:ring-zinc-500/30 focus:ring-offset-4 focus:ring-offset-black touch-manipulation"
             >
               See How It Works
