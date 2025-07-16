@@ -104,18 +104,7 @@ export const SiteHeader = () => {
               role="navigation"
               aria-label="Main navigation"
             >
-              {[
-                {
-                  href: "https://app.neurolint.dev/dashboard",
-                  label: "App",
-                  isApp: false,
-                },
-                {
-                  href: "mailto:founder@neurolint.dev",
-                  label: "Contact",
-                  isApp: false,
-                },
-              ].map((item, index) =>
+              {[].map((item, index) =>
                 item.comingSoon ? (
                   <span
                     key={item.label}
@@ -237,18 +226,7 @@ export const SiteHeader = () => {
               aria-hidden={!isMenuOpen}
             >
               <nav className="px-4 py-6 space-y-1" role="navigation">
-                {[
-                  {
-                    href: "https://app.neurolint.dev/dashboard",
-                    label: "App",
-                    isApp: false,
-                  },
-                  {
-                    href: "mailto:founder@neurolint.dev",
-                    label: "Contact",
-                    isApp: false,
-                  },
-                ].map((item, index) =>
+                {[].map((item, index) =>
                   item.comingSoon ? (
                     <span
                       key={item.label}
