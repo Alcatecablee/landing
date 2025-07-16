@@ -106,6 +106,11 @@ export const SiteHeader = () => {
             >
               {[
                 {
+                  label: "Demo",
+                  href: "https://app.neurolint.dev/",
+                  comingSoon: false,
+                },
+                {
                   label: "Pricing",
                   href: "https://app.neurolint.dev/pricing",
                   comingSoon: false,
