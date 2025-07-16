@@ -149,7 +149,7 @@ export const SiteHeader = () => {
                 rel="noopener noreferrer"
                 className="hidden md:inline-flex px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-500 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-zinc-500/50 focus:ring-offset-2 focus:ring-offset-black"
               >
-                See How It Works
+                Demo
               </a>
               <a
                 href="https://app.neurolint.dev/pricing"
@@ -286,7 +286,7 @@ export const SiteHeader = () => {
                     onClick={() => setIsMenuOpen(false)}
                     className="block w-full px-6 py-3 text-center text-zinc-300 hover:text-white hover:bg-zinc-800/70 rounded-lg transition-all duration-300"
                   >
-                    See How It Works
+                    Demo
                   </a>
                   <a
                     href="https://app.neurolint.dev/pricing"
