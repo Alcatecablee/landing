@@ -380,9 +380,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CLI Tool Section */}
-      <CLISection />
-
       {/* VS Code Extension Section */}
       <section id="vscode" className="py-20">
         <div className="max-w-6xl mx-auto px-6">
