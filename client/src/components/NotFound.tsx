@@ -78,66 +78,6 @@ export function NotFound() {
           </div>
 
           {/* Features Teaser */}
-          <div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left animate-slide-in-up"
-            style={{ animationDelay: "0.8s" }}
-          >
-            <div className="p-5 bg-zinc-900/40 rounded-xl border border-zinc-800 transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/60 transform hover:scale-[1.02]">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center">
-                  <Database className="w-5 h-5 text-white" />
-                </div>
-                <h4 className="font-semibold text-white text-sm sm:text-base">
-                  Advanced AI Analysis
-                </h4>
-              </div>
-              <p className="text-zinc-400 text-sm leading-relaxed">
-                6-layer code analysis using cutting-edge AI and machine learning
-              </p>
-            </div>
-
-            <div className="p-5 bg-zinc-900/40 rounded-xl border border-zinc-800 transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/60 transform hover:scale-[1.02]">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-white" />
-                </div>
-                <h4 className="font-semibold text-white text-sm sm:text-base">
-                  Real-time Feedback
-                </h4>
-              </div>
-              <p className="text-zinc-400 text-sm leading-relaxed">
-                Get instant suggestions and improvements as you code
-              </p>
-            </div>
-
-            <div className="p-5 bg-zinc-900/40 rounded-xl border border-zinc-800 transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/60 transform hover:scale-[1.02]">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center">
-                  <Settings className="w-5 h-5 text-white" />
-                </div>
-                <h4 className="font-semibold text-white text-sm sm:text-base">
-                  Auto-fixes
-                </h4>
-              </div>
-              <p className="text-zinc-400 text-sm leading-relaxed">
-                Automatically apply code transformations and optimizations
-              </p>
-            </div>
-
-            <div className="p-5 bg-zinc-900/40 rounded-xl border border-zinc-800 transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/60 transform hover:scale-[1.02]">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center">
-                  <Code className="w-5 h-5 text-white" />
-                </div>
-                <h4 className="font-semibold text-white text-sm sm:text-base">
-                  IDE Integration
-                </h4>
-              </div>
-              <p className="text-zinc-400 text-sm leading-relaxed">
-                Seamless integration with VS Code, CLI, and API access
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
