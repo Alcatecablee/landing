@@ -370,6 +370,12 @@ export default function Index() {
         </div>
       </section>
 
+            {/* CLI Section */}
+      <CLISection />
+
+      {/* VSCode Section */}
+      <VSCodeSection />
+
       {/* FAQ Section */}
       <FAQSection />
 
