@@ -131,7 +131,7 @@ export default function Index() {
         <div className="max-w-6xl mx-auto z-10 animate-fade-in-blur">
           <div className="mb-12 animate-slide-in-down animate-delay-200">
             <span className="px-6 py-3 bg-zinc-900/70 rounded-2xl text-base font-bold backdrop-blur-xl border-2 border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) hover:scale-105 hover:-translate-y-1 cursor-default">
-              Next Generation Code Analysis
+              React & Next.js Modernization Platform
             </span>
           </div>
 
