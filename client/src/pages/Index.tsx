@@ -225,10 +225,10 @@ export default function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-white">
-              Multi-Layer Analysis System
+              6-Layer Modernization Engine
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto font-medium">
-              Our six-layer analysis system catches issues other tools miss
+              Our comprehensive system identifies legacy patterns and provides safe upgrade paths
             </p>
           </div>
 
