@@ -47,11 +47,11 @@ const TypewriterHeadline: React.FC = () => {
   const [currentWordIndex, setCurrentWordIndex] = React.useState(0);
 
   const words = [
-    "Code Analysis",
-    "Bug Detection",
-    "Code Optimization",
-    "Performance Tuning",
-    "Code Transformation",
+    "React Modernization",
+    "Next.js Upgrades",
+    "Legacy Code Migration",
+    "Technical Debt Auditing",
+    "Component Transformation",
   ];
 
   React.useEffect(() => {
