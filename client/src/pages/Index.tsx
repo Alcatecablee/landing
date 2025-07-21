@@ -235,39 +235,39 @@ export default function Index() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Syntax Analysis",
+                title: "Configuration Modernization",
                 description:
-                  "Advanced parsing catches syntax errors and potential issues before they cause problems.",
+                  "Upgrade TypeScript configs, Next.js security settings, and build optimizations for modern standards.",
                 icon: Zap,
               },
               {
-                title: "Pattern Detection",
+                title: "Content Standardization",
                 description:
-                  "Identifies common anti-patterns and suggests modern alternatives.",
+                  "Ensure consistent branding and documentation compliance across your React components.",
                 icon: Search,
               },
               {
-                title: "Component Analysis",
+                title: "Component Intelligence",
                 description:
-                  "Ensures React components follow best practices and performance guidelines.",
+                  "Modernize components for React 18 and Next.js App Router with automated key prop additions.",
                 icon: Puzzle,
               },
               {
-                title: "Data Flow Check",
+                title: "SSR/Hydration Safety",
                 description:
-                  "Validates prop types, state management, and data flow through your application.",
+                  "Ensure hydration safety for Next.js migrations and prevent server-client mismatches.",
                 icon: BarChart3,
               },
               {
-                title: "Framework Optimization",
+                title: "App Router Optimization",
                 description:
-                  "Specific checks for Next.js and other modern framework features.",
+                  "Automate Next.js App Router upgrades with safe Page Router to App Router transformations.",
                 icon: Atom,
               },
               {
-                title: "Testing Coverage",
+                title: "Testing & Validation",
                 description:
-                  "Analyzes test coverage and suggests areas needing more testing.",
+                  "Enterprise-grade quality assurance with automated testing for your modernized code.",
                 icon: CheckCircle,
               },
             ].map((feature, index) => {
