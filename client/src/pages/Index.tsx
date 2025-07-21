@@ -139,13 +139,13 @@ export default function Index() {
 
           <div className="relative mb-16 animate-slide-in-up animate-delay-500">
             <p className="text-xl md:text-2xl lg:text-3xl text-zinc-200 mb-16 max-w-4xl mx-auto leading-relaxed px-6 md:px-8 py-6 md:py-8 backdrop-blur-xl rounded-2xl md:rounded-3xl border border-zinc-800/50 hover:border-zinc-700/70 font-medium transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) hover:bg-zinc-900/20">
-              Experience advanced code analysis with our{" "}
+              Modernize your React & Next.js codebase with{" "}
               <span className="text-white font-black">
-                transformation platform
+                automated legacy upgrades
               </span>
-              . Detect bugs, optimize performance, and{" "}
+              . Audit technical debt, ensure production-ready code, and{" "}
               <span className="text-white font-black">
-                maintain clean code automatically
+                migrate safely to modern patterns
               </span>
               .
             </p>
