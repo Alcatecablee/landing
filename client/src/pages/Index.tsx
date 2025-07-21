@@ -383,11 +383,10 @@ export default function Index() {
         <div className="max-w-6xl mx-auto relative">
           <div className="relative bg-zinc-900/70 border-2 border-zinc-800 rounded-3xl p-16 md:p-24 text-center backdrop-blur-xl">
             <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-white">
-              Ready to Transform Your Code?
+              Ready to Modernize Your React & Next.js Codebase?
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 mb-16 max-w-4xl mx-auto font-medium">
-              Join developers who are writing better code with our advanced
-              transformation platform
+              Join teams who are safely upgrading legacy codebases with automated modernization
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
