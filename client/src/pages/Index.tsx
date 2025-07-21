@@ -395,7 +395,7 @@ export default function Index() {
                 rel="noopener noreferrer"
                 className="px-10 py-5 bg-white text-black font-black rounded-2xl hover:bg-gray-100 transition-all duration-300 text-lg shadow-2xl hover:scale-105"
               >
-                Get Started
+                Start Free Scan
               </a>
               <a
                 href="https://app.neurolint.dev"
@@ -403,7 +403,7 @@ export default function Index() {
                 rel="noopener noreferrer"
                 className="px-10 py-5 bg-black/50 text-white font-black rounded-2xl border-2 border-zinc-800 hover:bg-black hover:border-zinc-600 transition-all duration-300 text-lg backdrop-blur-xl hover:scale-105"
               >
-                Try Now
+                View Demo
               </a>
             </div>
           </div>
