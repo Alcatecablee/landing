@@ -334,21 +334,21 @@ export default function Index() {
             {[
               {
                 step: "01",
-                title: "Upload Your Code",
+                title: "Connect Your Project",
                 description:
-                  "Simply drag and drop your files or connect your repository for continuous analysis.",
+                  "Connect via GitHub integration or upload your React/Next.js project for modernization analysis.",
               },
               {
                 step: "02",
-                title: "Code Analysis",
+                title: "Run Modernization Scan",
                 description:
-                  "Our six-layer analysis system examines your code for issues and improvement opportunities using advanced AST parsing and pattern matching.",
+                  "Our 6-layer engine identifies legacy patterns, technical debt, and upgrade opportunities in your codebase.",
               },
               {
                 step: "03",
-                title: "Get Results",
+                title: "View Modernization Plan",
                 description:
-                  "Receive detailed reports with actionable fixes and improvements, prioritized by impact.",
+                  "Get detailed migration roadmaps with safe upgrade paths, rollback protection, and batch transformations.",
               },
             ].map((item, index) => (
               <div key={index} className="group relative">
