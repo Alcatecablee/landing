@@ -203,11 +203,10 @@ export default function Index() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-white">
-            See NeuroLint in Action
+            Modernize Your Codebase Today
           </h2>
           <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-            Try our interactive test suite to see how NeuroLint transforms your
-            code
+            See how NeuroLint identifies legacy patterns and provides safe upgrade paths
           </p>
           <a
             href="https://app.neurolint.dev"
