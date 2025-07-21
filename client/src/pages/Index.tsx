@@ -326,7 +326,7 @@ export default function Index() {
               How It Works
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto font-medium">
-              Three simple steps to better code
+              Three simple steps to modernize your React & Next.js codebase
             </p>
           </div>
 
