@@ -14,12 +14,12 @@ export function VSCodeSection() {
             id="vscode-heading"
             className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-white"
           >
-            Code in Your Editor
+            Modernize in Your Editor
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto font-medium">
-            Experience NeuroLint directly in Visual Studio Code with real-time
-            analysis, instant fixes, and seamless integration into your
-            development workflow.
+            Experience NeuroLint directly in Visual Studio Code with React & Next.js
+            modernization assistance, legacy pattern detection, and automated upgrade
+            suggestions.
           </p>
         </div>
 
@@ -35,7 +35,7 @@ export function VSCodeSection() {
                   <div className="w-3 h-3 bg-zinc-600 rounded-full"></div>
                 </div>
                 <div className="text-sm text-gray-300 ml-4 font-medium">
-                  Header.tsx - NeuroLint
+                  LegacyComponent.tsx - NeuroLint
                 </div>
               </div>
 
@@ -43,34 +43,35 @@ export function VSCodeSection() {
               <div className="p-6">
                 <div className="font-mono text-sm space-y-2">
                   <div className="text-gray-400">
-                    1 import React from 'react';
+                    1 import React, &#123; Component &#125; from 'react';
                   </div>
                   <div className="text-gray-400">2 </div>
-                  <div className="text-gray-400">
-                    3 export function Header() &#123;
-                  </div>
-                  <div className="text-gray-400">
-                    4 const items = ['Home', 'About', 'Contact'];
-                  </div>
-                  <div className="text-gray-400">5 </div>
                   <div className="flex items-center">
-                    <div className="text-gray-400 mr-1">6</div>
-                    <div className="text-gray-400">return (</div>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="text-gray-400 mr-1">7</div>
-                    <div className="text-red-400 mr-1">&lt;div&gt;</div>
-                    <div className="bg-red-500 text-white px-2 py-1 text-xs rounded-md font-medium">
-                      Missing key prop
+                    <div className="text-gray-400 mr-1">3</div>
+                    <div className="text-red-400 mr-1">class Header extends Component &#123;</div>
+                    <div className="bg-orange-500 text-white px-2 py-1 text-xs rounded-md font-medium">
+                      Convert to hooks
                     </div>
                   </div>
                   <div className="text-gray-400">
-                    8 &#123;items.map(item =&gt;
-                    &lt;div&gt;&#123;item&#125;&lt;/div&gt;)&#125;
+                    4 render() &#123;
                   </div>
-                  <div className="text-gray-400">9 &lt;/div&gt;</div>
-                  <div className="text-gray-400">10 );</div>
-                  <div className="text-gray-400">11 &#125;</div>
+                  <div className="text-gray-400">
+                    5 const items = ['Home', 'About', 'Contact'];
+                  </div>
+                  <div className="text-gray-400">6 </div>
+                  <div className="text-gray-400">
+                    7 return (
+                  </div>
+                  <div className="text-gray-400">
+                    8 &lt;div&gt;&#123;items.map(item =&gt;
+                  </div>
+                  <div className="text-gray-400">
+                    9 &lt;div&gt;&#123;item&#125;&lt;/div&gt;)&#125;
+                  </div>
+                  <div className="text-gray-400">10 &lt;/div&gt;</div>
+                  <div className="text-gray-400">11 );</div>
+                  <div className="text-gray-400">12 &#125; &#125;</div>
                 </div>
               </div>
             </div>
@@ -79,7 +80,7 @@ export function VSCodeSection() {
           {/* Features List */}
           <div className="order-2 lg:order-2 space-y-8">
             <h3 className="text-2xl font-black text-white mb-8 tracking-tight">
-              Code Smarter with NeuroLint
+              Modernize Smarter with NeuroLint
             </h3>
 
             <div className="space-y-4">
@@ -87,12 +88,12 @@ export function VSCodeSection() {
                 <div className="flex items-center gap-4 mb-3">
                   <Code2 className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
                   <h4 className="text-xl font-black text-white">
-                    Real-time Analysis
+                    Legacy Pattern Detection
                   </h4>
                 </div>
                 <p className="text-gray-300 leading-relaxed font-medium">
-                  Get instant feedback as you type with our advanced analysis
-                  engine running in the background.
+                  Identify outdated React patterns, class components, and Next.js
+                  legacy code that needs modernization.
                 </p>
               </div>
 
@@ -100,12 +101,12 @@ export function VSCodeSection() {
                 <div className="flex items-center gap-4 mb-3">
                   <Lightbulb className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
                   <h4 className="text-xl font-black text-white">
-                    Smart Suggestions
+                    Modernization Suggestions
                   </h4>
                 </div>
                 <p className="text-gray-300 leading-relaxed font-medium">
-                  Receive intelligent code improvements and pattern suggestions
-                  tailored to your project.
+                  Get specific upgrade recommendations for React 18, Next.js App Router,
+                  and modern TypeScript patterns.
                 </p>
               </div>
 
@@ -113,12 +114,12 @@ export function VSCodeSection() {
                 <div className="flex items-center gap-4 mb-3">
                   <Eye className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
                   <h4 className="text-xl font-black text-white">
-                    Visual Indicators
+                    Upgrade Previews
                   </h4>
                 </div>
                 <p className="text-gray-300 leading-relaxed font-medium">
-                  See potential issues highlighted directly in your editor with
-                  detailed explanations.
+                  Preview automated upgrades before applying them with detailed
+                  diff views and rollback options.
                 </p>
               </div>
 
@@ -126,12 +127,12 @@ export function VSCodeSection() {
                 <div className="flex items-center gap-4 mb-3">
                   <Settings className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
                   <h4 className="text-xl font-black text-white">
-                    Customizable Rules
+                    Migration Workflows
                   </h4>
                 </div>
                 <p className="text-gray-300 leading-relaxed font-medium">
-                  Configure analysis layers and rules to match your team's
-                  coding standards and preferences.
+                  Follow step-by-step migration workflows for React 18, Next.js 14,
+                  and TypeScript upgrades.
                 </p>
               </div>
             </div>
