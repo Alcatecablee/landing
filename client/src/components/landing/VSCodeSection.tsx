@@ -30,9 +30,9 @@ export function VSCodeSection() {
               {/* VS Code Title Bar */}
               <div className="bg-zinc-900 px-6 py-4 flex items-center gap-3 border-b border-zinc-800">
                 <div className="flex gap-2">
-                  <div className="w-3 h-3 bg-zinc-600 rounded-full"></div>
-                  <div className="w-3 h-3 bg-zinc-600 rounded-full"></div>
-                  <div className="w-3 h-3 bg-zinc-600 rounded-full"></div>
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
                 <div className="text-sm text-gray-300 ml-4 font-medium">
                   LegacyComponent.tsx - NeuroLint
@@ -40,7 +40,7 @@ export function VSCodeSection() {
               </div>
 
               {/* VS Code Interface */}
-              <div className="p-6">
+              <div className="bg-black p-6">
                 <div className="font-mono text-sm space-y-2">
                   <div className="text-gray-400">
                     1 import React, &#123; Component &#125; from 'react';
