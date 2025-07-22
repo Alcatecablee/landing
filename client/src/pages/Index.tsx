@@ -96,6 +96,15 @@ const TypewriterHeadline: React.FC = () => {
 export default function Index() {
   const [mounted, setMounted] = React.useState(false);
 
+  // Lazy loading refs for each section
+  const [ctaSectionRef, ctaSectionInView] = useInView(0.2);
+  const [featuresSectionRef, featuresSectionInView] = useInView(0.1);
+  const [howItWorksSectionRef, howItWorksInView] = useInView(0.2);
+  const [cliSectionRef, cliSectionInView] = useInView(0.2);
+  const [vscodeSectionRef, vscodeSectionInView] = useInView(0.2);
+  const [faqSectionRef, faqSectionInView] = useInView(0.2);
+  const [finalCtaSectionRef, finalCtaSectionInView] = useInView(0.2);
+
   React.useEffect(() => {
     setMounted(true);
   }, []);
@@ -200,19 +209,35 @@ export default function Index() {
       </section>
 
       {/* Test Suite CTA Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-white">
+      <section ref={ctaSectionRef} className="py-16 px-4">
+        <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 transform ${
+          ctaSectionInView
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 translate-y-20'
+        }`}>
+          <h2 className={`text-5xl md:text-7xl font-black mb-8 tracking-tight text-white transition-all duration-1000 delay-200 transform ${
+            ctaSectionInView
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-10'
+          }`}>
             Modernize Your Codebase Today
           </h2>
-          <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
+          <p className={`text-lg md:text-xl text-gray-300 mb-8 leading-relaxed transition-all duration-1000 delay-400 transform ${
+            ctaSectionInView
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-10'
+          }`}>
             See how NeuroLint identifies legacy patterns and provides safe upgrade paths
           </p>
           <a
             href="https://app.neurolint.dev"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl transform translate-y-20"
+            className={`inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-1000 shadow-xl delay-600 transform ${
+              ctaSectionInView
+                ? 'opacity-100 translate-y-0 scale-100'
+                : 'opacity-0 translate-y-20 scale-95'
+            }`}
           >
             <Play className="w-6 h-6" />
             Start Free Analysis
@@ -221,13 +246,25 @@ export default function Index() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-24 px-4">
+      <section ref={featuresSectionRef} id="features" className="py-24 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-white">
+          <div className={`text-center mb-20 transition-all duration-1000 transform ${
+            featuresSectionInView
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-20'
+          }`}>
+            <h2 className={`text-5xl md:text-7xl font-black mb-8 tracking-tight text-white transition-all duration-1000 delay-200 transform ${
+              featuresSectionInView
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-10'
+            }`}>
               6-Layer Modernization Engine
             </h2>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto font-medium">
+            <p className={`text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto font-medium transition-all duration-1000 delay-400 transform ${
+              featuresSectionInView
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-10'
+            }`}>
               Our comprehensive system identifies legacy patterns and provides safe upgrade paths
             </p>
           </div>
@@ -300,7 +337,12 @@ export default function Index() {
               return (
                 <div
                   key={index}
-                  className={`feature-card bg-black/70 backdrop-blur-xl p-10 rounded-3xl relative border-2 border-zinc-800/50 hover:border-zinc-600/80 transition-all duration-300 hover:bg-black/90 group h-[280px] flex flex-col ${getGlowClass()}`}
+                  className={`feature-card bg-black/70 backdrop-blur-xl p-10 rounded-3xl relative border-2 border-zinc-800/50 hover:border-zinc-600/80 transition-all duration-1000 hover:bg-black/90 group h-[280px] flex flex-col transform ${
+                    featuresSectionInView
+                      ? 'opacity-100 translate-y-0 scale-100'
+                      : 'opacity-0 translate-y-20 scale-95'
+                  } ${getGlowClass()}`}
+                  style={{ transitionDelay: `${(index * 100) + 600}ms` }}
                 >
                   <div className="flex items-center gap-4 mb-6">
                     <feature.icon className="w-10 h-10 text-white group-hover:scale-110 transition-transform duration-300" />
@@ -319,13 +361,25 @@ export default function Index() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-24 px-4">
+      <section ref={howItWorksSectionRef} className="py-24 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-white">
+          <div className={`text-center mb-20 transition-all duration-1000 transform ${
+            howItWorksInView
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-20'
+          }`}>
+            <h2 className={`text-5xl md:text-7xl font-black mb-8 tracking-tight text-white transition-all duration-1000 delay-200 transform ${
+              howItWorksInView
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-10'
+            }`}>
               How It Works
             </h2>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto font-medium">
+            <p className={`text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto font-medium transition-all duration-1000 delay-400 transform ${
+              howItWorksInView
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-10'
+            }`}>
               Three simple steps to modernize your React & Next.js codebase
             </p>
           </div>
@@ -351,7 +405,12 @@ export default function Index() {
                   "Get detailed migration roadmaps with safe upgrade paths, rollback protection, and batch transformations.",
               },
             ].map((item, index) => (
-              <div key={index} className="group relative">
+              <div key={index} className={`group relative transition-all duration-1000 transform ${
+                howItWorksInView
+                  ? 'opacity-100 translate-y-0 scale-100'
+                  : 'opacity-0 translate-y-20 scale-95'
+              }`}
+              style={{ transitionDelay: `${(index * 200) + 600}ms` }}>
                 <div className="relative p-6 md:p-8 lg:p-10 bg-[#111111] border-2 border-zinc-800 rounded-3xl hover:border-zinc-600 transition-all duration-300 hover:bg-zinc-900/50 min-h-[320px] md:h-[360px] lg:h-[320px] flex flex-col">
                   <div className="text-4xl md:text-5xl font-black text-white mb-4 md:mb-6 lg:mb-8">
                     {item.step}
@@ -370,25 +429,59 @@ export default function Index() {
       </section>
 
             {/* CLI Section */}
-      <CLISection />
+      <div ref={cliSectionRef} className={`transition-all duration-1000 transform ${
+        cliSectionInView
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
+      }`}>
+        <CLISection />
+      </div>
 
       {/* VSCode Section */}
-      <VSCodeSection />
+      <div ref={vscodeSectionRef} className={`transition-all duration-1000 transform ${
+        vscodeSectionInView
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
+      }`}>
+        <VSCodeSection />
+      </div>
 
       {/* FAQ Section */}
-      <FAQSection />
+      <div ref={faqSectionRef} className={`transition-all duration-1000 transform ${
+        faqSectionInView
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-20'
+      }`}>
+        <FAQSection />
+      </div>
 
       {/* CTA Section */}
-      <section className="py-24 px-4">
+      <section ref={finalCtaSectionRef} className="py-24 px-4">
         <div className="max-w-6xl mx-auto relative">
-          <div className="relative bg-zinc-900/70 border-2 border-zinc-800 rounded-3xl p-16 md:p-24 text-center backdrop-blur-xl">
-            <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-white">
+          <div className={`relative bg-zinc-900/70 border-2 border-zinc-800 rounded-3xl p-16 md:p-24 text-center backdrop-blur-xl transition-all duration-1000 transform ${
+            finalCtaSectionInView
+              ? 'opacity-100 translate-y-0 scale-100'
+              : 'opacity-0 translate-y-20 scale-95'
+          }`}>
+            <h2 className={`text-5xl md:text-7xl font-black mb-8 tracking-tight text-white transition-all duration-1000 delay-200 transform ${
+              finalCtaSectionInView
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-10'
+            }`}>
               Ready to Modernize Your React & Next.js Codebase?
             </h2>
-            <p className="text-xl md:text-2xl text-gray-300 mb-16 max-w-4xl mx-auto font-medium">
+            <p className={`text-xl md:text-2xl text-gray-300 mb-16 max-w-4xl mx-auto font-medium transition-all duration-1000 delay-400 transform ${
+              finalCtaSectionInView
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-10'
+            }`}>
               Join teams who are safely upgrading legacy codebases with automated modernization
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className={`flex flex-col sm:flex-row gap-6 justify-center transition-all duration-1000 delay-600 transform ${
+              finalCtaSectionInView
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-20'
+            }`}>
               <a
                 href="https://app.neurolint.dev/dashboard"
                 target="_blank"
