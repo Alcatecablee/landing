@@ -26,22 +26,21 @@ function TypingTerminal() {
     "$ npm install -g @neurolint/cli",
     "Installing NeuroLint CLI...",
     "✓ Installation complete",
-    "$ neurolint login --enterprise",
-    "NeuroLint CLI",
-    "⚠ Enterprise authentication required.",
-    "✓ Authentication successful",
-    "$ neurolint enterprise",
-    "NeuroLint Enterprise Features",
-    "neurolint team - Team management",
-    "neurolint analytics - Analytics and reporting",
-    "neurolint webhook - Webhook management",
-    "neurolint sso - Single Sign-On",
-    "neurolint audit - Audit trail and compliance",
-    "$ neurolint team --list",
-    "Teams:",
-    "● Development Team (team-123)",
-    "  Members: 12",
-    "  SSO: Enabled",
+    "$ neurolint scan my-react-app",
+    "NeuroLint - React & Next.js Modernization",
+    "Analyzing legacy patterns...",
+    "✓ Found 47 modernization opportunities",
+    "$ neurolint modernize",
+    "Modernization Plan:",
+    "● React 16 → 18 upgrade (12 files)",
+    "● Class to hooks conversion (8 components)",
+    "● Next.js App Router migration (15 pages)",
+    "● TypeScript config upgrade (1 file)",
+    "● Deprecated pattern fixes (11 issues)",
+    "$ neurolint migrate --react-18",
+    "✓ Migrating to React 18...",
+    "✓ Updated 12 files successfully",
+    "✓ Migration complete",
   ];
 
   useEffect(() => {
@@ -200,11 +199,11 @@ export function CLISection() {
             id="cli-heading"
             className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-white"
           >
-            Enterprise CLI Tool
+            React Modernization CLI
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto font-medium">
-            Production-ready command line interface with robust error handling,
-            team management, and enterprise-grade security features.
+            Automate React & Next.js modernization with safe, automated upgrades
+            and technical debt analysis for legacy codebases.
           </p>
         </div>
 
@@ -232,7 +231,7 @@ export function CLISection() {
                   )}
                 </button>
                 <a
-                  href="https://docs.neurolint.dev/cli"
+                  href="https://docs.neurolint.dev/modernization"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="border-2 border-zinc-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:border-zinc-600 transition-all duration-300 flex items-center gap-3"
@@ -248,44 +247,44 @@ export function CLISection() {
                 <div className="flex items-center gap-4 mb-3">
                   <Users className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
                   <h4 className="text-xl font-black text-white">
-                    Team Management
+                    React 18 Migration
                   </h4>
                 </div>
                 <p className="text-gray-300 leading-relaxed font-medium">
-                  Complete team collaboration with role-based access
+                  Automated class-to-hooks conversion and React 18 upgrades
                 </p>
               </div>
               <div className="bg-black/70 backdrop-blur-xl p-6 rounded-3xl border-2 border-zinc-800/50 hover:border-zinc-600/80 transition-all duration-300 hover:bg-black/90 group">
                 <div className="flex items-center gap-4 mb-3">
                   <BarChart3 className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
                   <h4 className="text-xl font-black text-white">
-                    Analytics & Reports
+                    Technical Debt Analysis
                   </h4>
                 </div>
                 <p className="text-gray-300 leading-relaxed font-medium">
-                  Executive dashboards and compliance reporting
+                  Detailed reports on legacy patterns and modernization opportunities
                 </p>
               </div>
               <div className="bg-black/70 backdrop-blur-xl p-6 rounded-3xl border-2 border-zinc-800/50 hover:border-zinc-600/80 transition-all duration-300 hover:bg-black/90 group">
                 <div className="flex items-center gap-4 mb-3">
                   <Key className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
                   <h4 className="text-xl font-black text-white">
-                    SSO Integration
+                    Next.js App Router Migration
                   </h4>
                 </div>
                 <p className="text-gray-300 leading-relaxed font-medium">
-                  SAML, OIDC, and OAuth2 enterprise authentication
+                  Automated Pages Router to App Router conversion
                 </p>
               </div>
               <div className="bg-black/70 backdrop-blur-xl p-6 rounded-3xl border-2 border-zinc-800/50 hover:border-zinc-600/80 transition-all duration-300 hover:bg-black/90 group">
                 <div className="flex items-center gap-4 mb-3">
                   <FileText className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
                   <h4 className="text-xl font-black text-white">
-                    Audit & Compliance
+                    Safe Migration Workflows
                   </h4>
                 </div>
                 <p className="text-gray-300 leading-relaxed font-medium">
-                  SOC2, GDPR, ISO27001 compliance tracking
+                  Rollback protection and detailed diff previews
                 </p>
               </div>
             </div>
