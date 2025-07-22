@@ -11,104 +11,108 @@ const faqData: FAQItem[] = [
   {
     question: "What is NeuroLint and how does it work?",
     answer:
-      "NeuroLint is an advanced rule-based code analysis and transformation platform that automatically fixes code issues, improves performance, and enforces best practices. It uses a sophisticated 6-layer analysis system combining AST parsing, pattern recognition, and rule-based transformations to identify and fix problems in TypeScript, JavaScript, React, and Next.js codebases.",
+      "NeuroLint is a React & Next.js modernization platform that helps teams upgrade legacy codebases safely and efficiently. It analyzes your React applications to identify outdated patterns, class components, and Next.js legacy code, then provides automated migration workflows for React 18, Next.js App Router, and modern TypeScript patterns.",
     keywords: [
-      "code analysis",
-      "automated fixing",
-      "advanced transformation",
+      "React modernization",
+      "Next.js migration",
+      "legacy upgrade",
       "TypeScript",
-      "JavaScript",
-      "React",
+      "React 18",
+      "App Router",
     ],
   },
   {
     question:
-      "Which programming languages and frameworks does NeuroLint support?",
+      "What types of React and Next.js modernization does NeuroLint handle?",
     answer:
-      "NeuroLint currently supports TypeScript, JavaScript, React, and Next.js applications. Our platform includes specialized layers for component analysis, hydration fixes, configuration validation, and performance optimization. We're continuously expanding support for additional frameworks and languages.",
+      "NeuroLint specializes in React 16→18 upgrades, class-to-hooks conversions, Next.js Pages Router to App Router migrations, TypeScript config modernization, and deprecated pattern fixes. Our platform identifies technical debt and provides safe, automated upgrade paths with rollback protection.",
     keywords: [
-      "TypeScript",
-      "JavaScript",
-      "React",
-      "Next.js",
-      "frameworks",
-      "programming languages",
+      "React 18 upgrade",
+      "class to hooks",
+      "App Router migration",
+      "TypeScript modernization",
+      "technical debt",
+      "legacy patterns",
     ],
   },
   {
-    question: "How secure is my code when using NeuroLint?",
+    question: "How safe are NeuroLint's automated migrations?",
     answer:
-      "Security is our top priority. Your code is processed securely and never stored on our servers. All analysis happens in isolated environments, and we use enterprise-grade encryption for data transmission. NeuroLint is SOC 2 compliant and follows industry best practices for data protection.",
+      "NeuroLint prioritizes migration safety with detailed diff previews, rollback protection, and dry-run modes. Every transformation is validated before application, and you can review all changes before committing. We provide backup strategies and incremental migration options to minimize risk.",
     keywords: [
-      "security",
-      "code protection",
-      "encryption",
-      "SOC 2",
-      "enterprise-grade",
+      "migration safety",
+      "rollback protection",
+      "diff preview",
+      "dry-run mode",
+      "validation",
+      "backup",
     ],
   },
   {
     question:
       "Can I integrate NeuroLint with my existing development workflow?",
     answer:
-      "Yes! NeuroLint offers multiple integration options including a CLI tool, VS Code extension, REST API, and CI/CD integrations. You can integrate with GitHub Actions, Jenkins, GitLab CI, and other popular development tools. We also provide webhooks and Slack notifications for team collaboration.",
+      "Yes! NeuroLint offers a CLI tool for automated migrations, VS Code extension for in-editor modernization assistance, and CI/CD integrations. You can run modernization scans on pull requests, integrate with GitHub Actions, and use our API for custom workflows.",
     keywords: [
-      "CLI",
-      "VS Code",
-      "API",
-      "CI/CD",
+      "CLI tool",
+      "VS Code extension",
+      "CI/CD integration",
       "GitHub Actions",
-      "Jenkins",
-      "integration",
+      "API",
+      "pull requests",
+      "workflow",
     ],
   },
   {
-    question: "What is the difference between the free and paid plans?",
+    question: "What's included in the free vs premium plans?",
     answer:
-      "The free plan includes 100 transformations per month and access to our core analysis layers. Pro plans offer unlimited transformations, priority support, advanced analysis features, team collaboration tools, and enterprise integrations. Enterprise plans add custom rules, dedicated support, and on-premise deployment options.",
+      "The free plan includes unlimited project scanning and basic modernization reports. Premium unlocks detailed migration plans with PDF exports, one-click batch migrations, rollback protection, and team collaboration features. We also offer project-based billing for one-time migrations ($1k-$10k).",
     keywords: [
-      "pricing",
       "free plan",
-      "pro plan",
-      "enterprise",
-      "transformations",
-      "features",
+      "premium features",
+      "migration plans",
+      "batch migrations",
+      "project billing",
+      "team collaboration",
     ],
   },
   {
-    question: "How accurate are NeuroLint's code transformations?",
+    question: "How reliable are NeuroLint's React and Next.js migrations?",
     answer:
-      "NeuroLint achieves high accuracy in code transformations through our multi-layer validation system and extensive rule-based pattern matching. Each transformation is tested across multiple scenarios before application using AST parsing and syntax validation. Our transformation rules are continuously refined based on real-world usage and community feedback.",
+      "NeuroLint's migrations are highly reliable thanks to our specialized React and Next.js pattern recognition. We use AST-based transformations, extensive testing on real-world codebases, and incremental migration strategies. Each migration includes validation steps and rollback options for peace of mind.",
     keywords: [
-      "accuracy",
-      "transformations",
+      "migration reliability",
+      "pattern recognition",
+      "AST transformations",
       "validation",
-      "rule-based",
-      "code quality",
+      "rollback options",
+      "testing",
     ],
   },
   {
-    question: "Can NeuroLint handle large codebases?",
+    question: "Can NeuroLint modernize large React applications?",
     answer:
-      "Absolutely! NeuroLint is designed for enterprise-scale applications. Our platform can analyze and transform codebases with hundreds of thousands of lines of code efficiently. We use parallel processing, intelligent caching, and incremental analysis to ensure fast performance even on large projects.",
+      "Yes! NeuroLint handles enterprise-scale React applications efficiently. We use incremental migration strategies, allowing you to modernize components gradually without breaking your application. Our platform supports codebases with hundreds of components and provides migration progress tracking.",
     keywords: [
-      "large codebases",
-      "enterprise-scale",
-      "performance",
-      "parallel processing",
+      "large React apps",
+      "enterprise scale",
+      "incremental migration",
+      "progress tracking",
+      "component migration",
       "scalability",
     ],
   },
   {
-    question: "Do you offer custom rules and configurations?",
+    question: "Can I customize migration rules for my team's needs?",
     answer:
-      "Yes, enterprise customers can create custom analysis rules and configurations tailored to their specific coding standards and requirements. Our platform supports custom rule engines, team-specific configurations, and integration with existing linting tools and style guides.",
+      "Yes! Premium and enterprise plans allow custom migration rules and patterns specific to your codebase. You can configure which React patterns to modernize, set Next.js migration preferences, and integrate with your existing TypeScript and ESLint configurations.",
     keywords: [
-      "custom rules",
-      "configurations",
-      "enterprise",
-      "coding standards",
-      "style guides",
+      "custom migration rules",
+      "team configuration",
+      "React patterns",
+      "Next.js preferences",
+      "TypeScript config",
+      "ESLint integration",
     ],
   },
   {
@@ -124,15 +128,16 @@ const faqData: FAQItem[] = [
     ],
   },
   {
-    question: "How do I get started with NeuroLint?",
+    question: "How do I start modernizing my React app with NeuroLint?",
     answer:
-      "Getting started is easy! You can begin with our free plan by signing up and uploading your code for analysis. For teams, we recommend starting with our CLI tool or VS Code extension. Enterprise customers can schedule a demo to explore custom deployment options and advanced features.",
+      "Start with a free modernization scan! Connect your GitHub repo or upload your code to get a detailed analysis of legacy patterns and upgrade opportunities. Then use our CLI tool or VS Code extension to begin incremental migrations. No subscription required for the initial scan.",
     keywords: [
-      "getting started",
-      "free plan",
+      "modernization scan",
+      "GitHub integration",
+      "legacy analysis",
       "CLI tool",
       "VS Code extension",
-      "demo",
+      "free scan",
     ],
   },
 ];
@@ -230,8 +235,8 @@ export const FAQSection: React.FC = () => {
             </h2>
 
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto font-medium">
-              Get answers to common questions about NeuroLint's rule-based code
-              analysis, integrations, pricing, and enterprise features.
+              Get answers to common questions about NeuroLint's React & Next.js
+              modernization, migration workflows, pricing, and team features.
             </p>
           </div>
 
