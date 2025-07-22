@@ -128,9 +128,13 @@ export default function Index() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white" id="main-content">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center text-center px-4 py-16 relative overflow-hidden">
+      <section
+        className="min-h-screen flex items-center justify-center text-center px-4 py-16 relative overflow-hidden"
+        aria-label="Hero section"
+        role="main"
+      >
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-zinc-900/30 rounded-full blur-3xl"></div>
           <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-blue-950/10 rounded-full blur-3xl"></div>
@@ -138,16 +142,20 @@ export default function Index() {
         </div>
 
         <div className="max-w-6xl mx-auto z-10 animate-fade-in-blur">
-          <div className="mb-12 animate-slide-in-down animate-delay-200">
-            <span className="px-6 py-3 bg-zinc-900/70 rounded-2xl text-base font-bold backdrop-blur-xl border-2 border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) hover:scale-105 hover:-translate-y-1 cursor-default">
+          <div className="mb-8 md:mb-12 animate-slide-in-down animate-delay-200">
+            <span
+              className="px-4 md:px-6 py-2 md:py-3 bg-zinc-900/70 rounded-xl md:rounded-2xl text-sm md:text-base font-bold backdrop-blur-xl border-2 border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) hover:scale-105 hover:-translate-y-1 cursor-default interactive"
+              role="banner"
+              aria-label="Product category"
+            >
               React & Next.js Modernization Platform
             </span>
           </div>
 
           <TypewriterHeadline />
 
-          <div className="relative mb-16 animate-slide-in-up animate-delay-500">
-            <p className="text-xl md:text-2xl lg:text-3xl text-zinc-200 mb-16 max-w-4xl mx-auto leading-relaxed px-6 md:px-8 py-6 md:py-8 backdrop-blur-xl rounded-2xl md:rounded-3xl border border-zinc-800/50 hover:border-zinc-700/70 font-medium transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) hover:bg-zinc-900/20">
+          <div className="relative mb-12 md:mb-16 animate-slide-in-up animate-delay-500">
+            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-zinc-200 mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed px-4 md:px-6 lg:px-8 py-4 md:py-6 lg:py-8 backdrop-blur-xl rounded-xl md:rounded-2xl lg:rounded-3xl border border-zinc-800/50 hover:border-zinc-700/70 font-medium transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) hover:bg-zinc-900/20 interactive">
               Modernize your React & Next.js codebase with{" "}
               <span className="text-white font-black">
                 automated legacy upgrades
@@ -160,19 +168,21 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 md:gap-8 justify-center animate-slide-in-up animate-delay-700">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 lg:gap-8 justify-center animate-slide-in-up animate-delay-700">
             <a
               href="https://app.neurolint.dev/dashboard"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative px-8 md:px-10 py-4 md:py-5 bg-white text-black font-black rounded-xl md:rounded-2xl hover:bg-gray-100 active:bg-gray-200 transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) flex items-center justify-center gap-3 text-lg md:text-xl shadow-2xl hover:shadow-white/30 hover:scale-105 active:scale-95 focus:scale-105 focus:outline-none focus:ring-4 focus:ring-white/30 focus:ring-offset-4 focus:ring-offset-black touch-manipulation"
+              className="group relative px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 bg-white text-black font-black rounded-lg md:rounded-xl lg:rounded-2xl hover:bg-gray-100 active:bg-gray-200 transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) flex items-center justify-center gap-2 md:gap-3 text-base md:text-lg lg:text-xl shadow-2xl hover:shadow-white/30 hover:scale-105 active:scale-95 focus-visible:scale-105 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/30 focus-visible:ring-offset-4 focus-visible:ring-offset-black touch-manipulation interactive min-h-[48px] md:min-h-[56px]"
+              aria-label="Run free code scan"
             >
               Run Free Code Scan
               <svg
-                className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 group-focus:translate-x-1 transition-transform duration-300"
+                className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 group-hover:translate-x-1 group-focus-visible:translate-x-1 transition-transform duration-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -187,14 +197,16 @@ export default function Index() {
               href="https://app.neurolint.dev/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative px-8 md:px-10 py-4 md:py-5 bg-black/60 text-white font-black rounded-xl md:rounded-2xl border-2 border-zinc-800 hover:bg-black/80 hover:border-zinc-600 active:bg-black/90 transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) flex items-center justify-center gap-3 text-lg md:text-xl backdrop-blur-xl hover:scale-105 active:scale-95 focus:scale-105 focus:outline-none focus:ring-4 focus:ring-zinc-500/30 focus:ring-offset-4 focus:ring-offset-black touch-manipulation"
+              className="group relative px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 bg-black/60 text-white font-black rounded-lg md:rounded-xl lg:rounded-2xl border-2 border-zinc-800 hover:bg-black/80 hover:border-zinc-600 active:bg-black/90 transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) flex items-center justify-center gap-2 md:gap-3 text-base md:text-lg lg:text-xl backdrop-blur-xl hover:scale-105 active:scale-95 focus-visible:scale-105 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-zinc-500/30 focus-visible:ring-offset-4 focus-visible:ring-offset-black touch-manipulation interactive min-h-[48px] md:min-h-[56px]"
+              aria-label="Explore modernization features"
             >
               Explore Modernization Features
               <svg
-                className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-y-1 group-focus:translate-y-1 transition-transform duration-300"
+                className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 group-hover:translate-y-1 group-focus-visible:translate-y-1 transition-transform duration-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -209,20 +221,24 @@ export default function Index() {
       </section>
 
       {/* Test Suite CTA Section */}
-      <section ref={ctaSectionRef} className="py-16 px-4">
+      <section
+        ref={ctaSectionRef}
+        className="py-12 md:py-16 px-4"
+        aria-label="Call to action section"
+      >
         <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 transform ${
           ctaSectionInView
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 translate-y-20'
         }`}>
-          <h2 className={`text-5xl md:text-7xl font-black mb-8 tracking-tight text-white transition-all duration-1000 delay-200 transform ${
+          <h2 className={`text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 md:mb-8 tracking-tight text-white transition-all duration-1000 delay-200 transform ${
             ctaSectionInView
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-10'
           }`}>
             Modernize Your Codebase Today
           </h2>
-          <p className={`text-lg md:text-xl text-gray-300 mb-8 leading-relaxed transition-all duration-1000 delay-400 transform ${
+          <p className={`text-base md:text-lg lg:text-xl text-gray-300 mb-6 md:mb-8 leading-relaxed transition-all duration-1000 delay-400 transform ${
             ctaSectionInView
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-10'
@@ -233,11 +249,12 @@ export default function Index() {
             href="https://app.neurolint.dev"
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-1000 shadow-xl delay-600 transform ${
+            className={`inline-flex items-center gap-2 md:gap-3 bg-white text-black px-6 md:px-8 py-3 md:py-4 rounded-lg md:rounded-xl font-bold text-base md:text-lg hover:bg-gray-100 transition-all duration-1000 shadow-xl delay-600 transform interactive min-h-[48px] ${
               ctaSectionInView
                 ? 'opacity-100 translate-y-0 scale-100'
                 : 'opacity-0 translate-y-20 scale-95'
             }`}
+            aria-label="Start free code analysis"
           >
             <Play className="w-6 h-6" />
             Start Free Analysis
