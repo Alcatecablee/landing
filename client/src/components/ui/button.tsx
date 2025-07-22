@@ -5,23 +5,23 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95 focus:scale-105 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:transition-all [&_svg]:duration-300 hover:[&_svg]:rotate-3 hover:[&_svg]:scale-110 focus:[&_svg]:rotate-3 focus:[&_svg]:scale-110 relative overflow-hidden will-change-transform touch-manipulation -webkit-tap-highlight-color-transparent min-h-[44px]",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium relative overflow-hidden disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 will-change-transform touch-manipulation -webkit-tap-highlight-color-transparent min-h-[44px] transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1) transform-gpu backface-visibility-hidden focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black hover:scale-[1.02] active:scale-[0.98] focus-visible:scale-[1.02] [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:scale-110 focus-visible:[&_svg]:scale-110",
   {
     variants: {
       variant: {
         default:
-          "bg-zinc-900 text-white border border-zinc-800 hover:bg-zinc-800 hover:border-zinc-700 hover:shadow-lg hover:shadow-zinc-900/50 active:bg-zinc-900 focus:bg-zinc-800 focus:border-zinc-700 focus:shadow-lg focus:shadow-zinc-900/50",
+          "bg-zinc-900 text-white border border-zinc-800 hover:bg-zinc-800 hover:border-zinc-700 hover:shadow-lg hover:shadow-zinc-900/50 active:bg-zinc-900 focus-visible:bg-zinc-800 focus-visible:border-zinc-700 focus-visible:shadow-lg focus-visible:shadow-zinc-900/50",
         primary:
-          "bg-white text-black hover:bg-gray-100 border border-gray-300 hover:shadow-lg hover:shadow-white/20 active:bg-gray-50 focus:bg-gray-100 focus:shadow-lg focus:shadow-white/20",
+          "bg-white text-black hover:bg-gray-100 border border-gray-300 hover:shadow-lg hover:shadow-white/20 active:bg-gray-50 focus-visible:bg-gray-100 focus-visible:shadow-lg focus-visible:shadow-white/20",
         destructive:
-          "bg-red-900 text-white hover:bg-red-800 border border-red-700 hover:shadow-lg hover:shadow-red-900/50 active:bg-red-900 focus:bg-red-800 focus:shadow-lg focus:shadow-red-900/50",
+          "bg-red-900 text-white hover:bg-red-800 border border-red-700 hover:shadow-lg hover:shadow-red-900/50 active:bg-red-900 focus-visible:bg-red-800 focus-visible:shadow-lg focus-visible:shadow-red-900/50",
         outline:
-          "border border-zinc-800 bg-transparent hover:bg-zinc-900 hover:text-white hover:border-zinc-700 hover:shadow-lg hover:shadow-zinc-900/30 focus:bg-zinc-900 focus:text-white focus:border-zinc-700 focus:shadow-lg focus:shadow-zinc-900/30",
+          "border border-zinc-800 bg-transparent hover:bg-zinc-900 hover:text-white hover:border-zinc-700 hover:shadow-lg hover:shadow-zinc-900/30 focus-visible:bg-zinc-900 focus-visible:text-white focus-visible:border-zinc-700 focus-visible:shadow-lg focus-visible:shadow-zinc-900/30",
         secondary:
-          "bg-zinc-800 text-white hover:bg-zinc-700 border border-zinc-700 hover:shadow-lg hover:shadow-zinc-800/50 active:bg-zinc-800 focus:bg-zinc-700 focus:shadow-lg focus:shadow-zinc-800/50",
+          "bg-zinc-800 text-white hover:bg-zinc-700 border border-zinc-700 hover:shadow-lg hover:shadow-zinc-800/50 active:bg-zinc-800 focus-visible:bg-zinc-700 focus-visible:shadow-lg focus-visible:shadow-zinc-800/50",
         ghost:
-          "hover:bg-zinc-900 hover:text-white hover:shadow-lg hover:shadow-zinc-900/30 focus:bg-zinc-900 focus:text-white focus:shadow-lg focus:shadow-zinc-900/30",
-        link: "text-zinc-400 underline-offset-4 hover:underline hover:text-white hover:scale-100 active:scale-100 focus:underline focus:text-white focus:scale-100",
+          "hover:bg-zinc-900 hover:text-white hover:shadow-lg hover:shadow-zinc-900/30 focus-visible:bg-zinc-900 focus-visible:text-white focus-visible:shadow-lg focus-visible:shadow-zinc-900/30",
+        link: "text-zinc-400 underline-offset-4 hover:underline hover:text-white hover:scale-100 active:scale-100 focus-visible:underline focus-visible:text-white focus-visible:scale-100",
       },
       size: {
         default: "h-11 px-4 py-2 min-w-[2.75rem]",
@@ -81,7 +81,15 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {/* Enhanced shine effect on hover and focus */}
         {!loading && (
           <div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] group-focus:translate-x-[100%] transition-transform duration-700 ease-out pointer-events-none"
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] group-focus-visible:translate-x-[100%] transition-transform duration-700 ease-out pointer-events-none opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100"
+            aria-hidden="true"
+          />
+        )}
+
+        {/* Ripple effect on active */}
+        {!loading && (
+          <div
+            className="absolute inset-0 bg-white/20 rounded-full scale-0 group-active:scale-110 transition-transform duration-300 ease-out pointer-events-none opacity-0 group-active:opacity-100"
             aria-hidden="true"
           />
         )}
