@@ -92,7 +92,7 @@ export const SiteHeader = () => {
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2Fff4a9c5485bd483f9de4955855068620%2F782095f7d5454085bbee2289a7106f2e?format=webp&width=800"
                   alt="NeuroLint Logo"
-                  className="h-8 w-auto transition-all duration-300 group-hover:brightness-110 group-focus-visible:brightness-110"
+                  className="h-8 w-auto transition-all duration-300 group-hover:brightness-110 group-focus-visible:brightness-110 bee-flight-animation"
                   loading="eager"
                   decoding="async"
                 />
