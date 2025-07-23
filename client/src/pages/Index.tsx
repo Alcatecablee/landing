@@ -473,6 +473,9 @@ export default function Index() {
         <FAQSection />
       </div>
 
+      {/* AI-Themed Section */}
+      <AILandingSection />
+
       {/* CTA Section */}
       <section ref={finalCtaSectionRef} className="py-24 px-4">
         <div className="max-w-6xl mx-auto relative">
