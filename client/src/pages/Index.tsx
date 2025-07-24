@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from "react";
 import { FAQSection } from "@/components/landing/FAQSection";
 import { CLISection } from "@/components/landing/CLISection";
 import { VSCodeSection } from "@/components/landing/VSCodeSection";
-import AILandingSection from "@/components/landing/AILandingSection";
 
 import {
   Target,
